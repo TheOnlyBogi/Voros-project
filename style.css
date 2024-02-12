@@ -108,7 +108,7 @@ a:visited{
 }
 .message .meta {
     font-size: 0.8em;
-    color: #888;
+    color: #000000;
     margin-bottom: 2px;
 }
 .message .name {
@@ -131,31 +131,30 @@ a:visited{
 }
 #input-box button {
     padding: 8px 15px;
-    background-color: #007bff;
+    background-color: #09ff00;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
   padding:0;
   box-sizing: border-box;
 }
-.container3{
+.containerfooter{
     max-width: 1170px;
     margin:auto;
 }
-.row2{
+.rowfooter{
     display: flex;
     flex-wrap: wrap;
 }
 ul{
     list-style: none;
 }
-.footer2{
-    background-color: #04330f;
-}
+
 .footer-col{
    width: 25%;
    padding: 0 15px;
