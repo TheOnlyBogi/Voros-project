@@ -69,12 +69,12 @@ body {
     background-color: #2b5c25;
     color: #fff;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     margin-top: auto;
 }
 
 summary{
-    background-color: darkgreen;
+    background-color: #2b5c25;
     color: white;
 }
 
@@ -207,7 +207,7 @@ ul{
 }
 .footer-col .social-links a:hover{
     color: #000000;
-    background-color: #ffffff;
+    box-shadow: 0 0 5px rgb(0, 255, 55),0 0 10px rgb(30, 255, 0),0 0 15px rgb(255, 255, 255);
 }
 
 /*responsive*/
@@ -239,7 +239,8 @@ ul{
   text-decoration: none;
 }
 .fa-instagram {
-  background: #c49107;
   color: white;
   text-decoration: none;
+  background: linear-gradient(to bottom right, purple, rgb(236, 73, 100), yellow);
 }
+
