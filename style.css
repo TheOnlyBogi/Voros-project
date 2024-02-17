@@ -11,8 +11,8 @@ body {
   
 
 .container {
-	width: 80%;
-  margin: 0 auto;
+  width: 80%;
+  margin: auto;
   font-family: 'Work Sans';
   font-style: normal;
   font-weight: 400;
@@ -38,7 +38,8 @@ header::after {
     src: url(https://fonts.gstatic.com/s/worksans/v13/QGYsz_wNahGAdqQ43Rh_c6Dpp_k.woff2) format('woff2');
     unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
     text-align: center;
-    padding: 5px 5px;
+    padding: 8px 8px;
+    margin-top: 0;
   }
   .headerakcio a{
     text-decoration: none;
@@ -48,16 +49,12 @@ header::after {
     background: rgb(16, 131, 1);
     transition: all ease-in-out 450ms;
   }
-  
-  
-  
-
 nav {
-margin: auto;
+margin-top: 0px;
 }
 
 nav ul {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   list-style: none;
 }
@@ -67,14 +64,15 @@ nav ul li a{
 nav li {
   display: inline-block;
   margin-left: 110px;
+  margin-top: 0px;
   padding-top: 23px;
-  padding-left: 0px;
+  padding-bottom: 2px;
   padding-right: 0px;
   position: relative;
 }
 
 nav a {
-  color: green;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 17px;
@@ -93,14 +91,14 @@ nav ul li div a{
 }
 
 nav a:hover {
-  color: rgb(46, 185, 36);
+  color: rgb(186, 186, 186);
 }
 
 nav a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(186, 186, 186);
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   position: absolute;
