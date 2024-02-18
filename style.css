@@ -49,8 +49,9 @@ header::after {
     background: rgb(16, 131, 1);
     transition: all ease-in-out 450ms;
   }
+
 nav {
-margin-top: 0px;
+
 }
 
 nav ul {
@@ -189,7 +190,7 @@ a:visited{
     color: white,;
 }
 
-#containerforum {
+#containerforum{
     width: 500px;
     margin: 50px auto;
     background-color: #fff;
