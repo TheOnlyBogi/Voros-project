@@ -12,12 +12,12 @@
 
   <header class="header">
     <div class="headerakcio">
-      <a href="index.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+      <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
     </div>
-      <div class="container">
+      <div class="containerheader">
         <nav>
           <ul>
-                  <li><a href="Főoldal.html">Főoldal</a></li>
+                  <li><a href="Főoldal.html" class="VILÁGÍTS">Főoldal</a></li>
                   <li>
                       <a href="#">Termékek</a>
                       <div>
@@ -36,6 +36,20 @@
         </nav>
       </div>
   </header>
+  <script>
+    // JavaScript
+    // Az aktív menüpont beállítása
+    var currentLocation = window.location.href;
+    var navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(function(link) {
+        if (link.href === currentLocation) {
+            link.classList.add('VILÁGÍTS');
+        } else {
+            link.classList.remove('VILÁGÍTS');
+        }
+    });
+</script>
 
 
     <div id="containerforum" style="border: ridge 2px rgb(180, 180, 180);">
