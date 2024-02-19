@@ -2,7 +2,7 @@ body {
     font-family: monospace;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #ccefff;
     flex-direction: column;
     display: flex;
     min-height: 100vh;
