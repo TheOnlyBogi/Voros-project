@@ -2,7 +2,7 @@ body {
     font-family: monospace;
     margin: 0;
     padding: 0;
-    background-color: #ccefff;
+    background-color: #d8ecf3;
     flex-direction: column;
     display: flex;
     min-height: 100vh;
@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background: rgb(33, 159, 2);
+  background: #1EBBD7;
   font-size: 1.5rem;
 
 }
@@ -32,7 +32,7 @@ header::after {
   clear: both;
 }
 .headerakcio a h4{
-    background-color:rgb(19, 156, 0);
+    background-color:#0f9db6;
     font-size: 16px;
     font-family: monospace;
     font-style: normal;
@@ -48,13 +48,11 @@ header::after {
     color: black;
   }
   .headerakcio a h4:hover{
-    background: rgb(16, 131, 1);
+    background: rgb(255, 255, 255);
     transition: all ease-in-out 450ms;
   }
 
-nav {
 
-}
 nav ul li a.VILÁGÍTS{
   color: #000000;
 }
@@ -88,7 +86,7 @@ nav ul li:hover div{
 nav ul li div{
   display: none;
   position: absolute;
-  background-color:rgb(33, 159, 2);
+  background-color: #4ad3eb;
   color: white;
   padding: 3px;
   padding-left: 5px;
@@ -129,7 +127,7 @@ nav a:hover::before {
 .sidebar {
     float: left;
     width: 25%;
-    background-color: #86ff9a;
+    background-color: #abfcf5;
     padding: 20px;
 }
   
@@ -148,7 +146,7 @@ nav a:hover::before {
 
 .footer {
     clear: both;
-    background-color: #2b5c25;
+    background-color: #0ca2bd;
     color: #fff;
     padding: 10px;
     text-align: left;
@@ -156,7 +154,7 @@ nav a:hover::before {
 }
 
 summary{
-    background-color: #2b5c25;
+    background-color: #1EBBD7;
     color: white;
 }
 
@@ -213,7 +211,7 @@ a:visited{
 }
 #input-box button {
     padding: 8px 15px;
-    background-color: #09ff00;
+    background-color: #1EBBD7;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -289,7 +287,7 @@ ul{
 }
 .footer-col .social-links a:hover{
     color: #000000;
-    box-shadow: 0 0 5px rgb(0, 255, 55),0 0 10px rgb(30, 255, 0),0 0 15px rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgb(252, 255, 253),0 0 10px rgb(34, 240, 255),0 0 15px rgb(0, 181, 194);
 }
 
 /*responsive*/
