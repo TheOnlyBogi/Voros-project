@@ -1,19 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: monospace;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     flex-direction: column;
     display: flex;
     min-height: 100vh;
-    font-family: cursive;
+    font-family: monospace
 }
   
 
 .containerheader {
   width: 80%;
   margin: auto;
-  font-family: 'Work Sans';
+  font-family: monospace;
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/worksans/v13/QGYsz_wNahGAdqQ43Rh_c6Dpp_k.woff2) format('woff2');
@@ -34,7 +34,7 @@ header::after {
 .headerakcio a h4{
     background-color:rgb(19, 156, 0);
     font-size: 16px;
-    font-family: 'Work Sans';
+    font-family: monospace;
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/worksans/v13/QGYsz_wNahGAdqQ43Rh_c6Dpp_k.woff2) format('woff2');
