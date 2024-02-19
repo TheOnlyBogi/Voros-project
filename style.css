@@ -324,3 +324,9 @@ ul{
   background: linear-gradient(to bottom right, purple, rgb(236, 73, 100), yellow);
 }
 
+.logó{
+  height: 85px;
+  width: auto;
+  float: left;
+  text-align: center;
+}
