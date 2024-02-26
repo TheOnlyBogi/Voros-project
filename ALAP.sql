@@ -19,6 +19,52 @@ CREATE TABLE products (
 );
 
 
+CREATE TABLE IF NOT EXISTS kutya_termek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    ar INT NOT NULL,
+    leiras TEXT
+);
+
+CREATE TABLE IF NOT EXISTS macska_termek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    ar INT NOT NULL,
+    leiras TEXT
+);
+
+CREATE TABLE IF NOT EXISTS hal_hullo_termek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    ar INT NOT NULL,
+    leiras TEXT
+);
+
+
+CREATE TABLE IF NOT EXISTS hullő_termek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    ar INT NOT NULL,
+    leiras TEXT
+);
+
+
+CREATE TABLE IF NOT EXISTS kisemlos_termek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    ar INT NOT NULL,
+    leiras TEXT
+);
+
+
+CREATE TABLE IF NOT EXISTS madar_termek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255) NOT NULL,
+    ar INT NOT NULL,
+    leiras TEXT
+);
+
+
 INSERT INTO products (name, description, price, stock_quantity, category_id) VALUES ('Macska karmolófa', 'Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.', 5000, [Mennyiség], [KategóriaID]);
 INSERT INTO products (name, description, price, stock_quantity, category_id) VALUES ('Akvárium dekoráció', 'Színes műanyag díszek akváriumokhoz, hogy otthonosabbá tegye halai számára az otthont.', 2000, [Mennyiség], [KategóriaID]);
 INSERT INTO products (name, description, price, stock_quantity, category_id) VALUES ('Teknős hőlámpa', 'Infravörös hőlámpa teknősök számára, amely biztosítja a megfelelő hőmérsékletet és megvilágítást a terráriumban.', 3000, [Mennyiség], [KategóriaID]);
