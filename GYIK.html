@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Főoldal</title>
+    <title>GYIK</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -20,36 +20,23 @@
             <ul>
               <li><a href="Főoldal.html">Főoldal</a></li>
               <li>
-                <a href="#">Termékek</a>
-                  <div>
-                    <a href="kutya.html">Kutya</a>
-                    <a href="cica.html">Cica</a>
-                    <a href="kisemlős.html">Kisemlős</a>
-                    <a href="madar.html">Madár</a>
-                    <a href="halakhullok.html">Hal, Hüllő</a>
-                  </div>
-                </li>
-                <li><a href="rolunk.html">Rólunk</a></li>
-                <li><a href="kapcsolat.html">Kapcsolat</a></li>
-                <li><a href="Fórum.html">Fórum</a></li>
-                <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
+                <a href="">Termékek</a>
+                <div>
+                  <a href="kutya.html">Kutya</a>
+                  <a href="cica.html">Cica</a>
+                  <a href="kisemlős.html">Kisemlős</a>
+                  <a href="madar.html">Madár</a>
+                  <a href="halakhullok.html">Hal, Hüllő</a>
+                </div>
+              </li>
+              <li><a href="rolunk.html">Rólunk</a></li>
+              <li><a href="forum.html">Fórum</a></li>
+              <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
             </ul>
           </nav>
         </div>
     </header>
-    <script>
-      var currentLocation = window.location.href;
-      var navLinks = document.querySelectorAll('nav ul li a');
   
-      navLinks.forEach(function(link) {
-          if (link.href === currentLocation) {
-              link.classList.add('VILÁGÍTS');
-          } else {
-              link.classList.remove('VILÁGÍTS');
-          }
-      });
-  </script>
-
 <footer class="footer">
   <div class="containerfooter">
     <div class="rowfooter">
@@ -68,11 +55,11 @@
         <h4>Oldalak</h4>
         <ul>
           <li><a href="#">Szállítás</a></li>
-          <li><a href="#">GYIK</a></li>
-          <li><a href="#">Cégünkről</a></li>
-          <li>
-            <a href="Adatvédelmi tájékoztató.docx" download> Adatvédelmi tájékoztató </a>
+          <li><a href="#">Árlista</a></li>
+          <li><a href="GYIK.html">GYIK</a></li>
+          <li><a href="#">Adatvédelmi tájékoztató</a>
           </li>
+
         </ul>
       </div>
       <div class="footer-col">
@@ -81,7 +68,7 @@
           <li><a href="#">TopPet Kft.</a></li>
           <li><a href="#">7022 Győr Henye út 26.</a></li>
           <li><a href="#">+36 20/744 5545</a></li>
-          <li><a href="#">top.pet.info@gmail.com</a></li>
+          <li><a href="mailto:top.pet.info@gmail.com">valami@gmail.com</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -96,7 +83,6 @@
     </div>
   </div>
 </footer>
-
 
 </body>
 </html>
