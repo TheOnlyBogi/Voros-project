@@ -18,20 +18,19 @@
       <div class="containerheader">
         <nav>
           <ul>
-              <li><a href="Főoldal.html" class="VILÁGÍTS">Főoldal</a></li>
-              <li>
-                  <a href="#">Termékek</a>
-                  <div>
-                    <a href="kutya.html">Kutya</a>
-                    <a href="cica.html">Cica</a>
-                    <a href="kisemlős.html">Kisemlős</a>
-                    <a href="madar.html">Madár</a>
-                    <a href="halakhullok.html">Hal, Hüllő</a>
-                  </div>
-                </li>
-                  
-                <li><a href="rolunk.html">Rólunk</a></li>
-                <li><a href="Fórum.html">Fórum</a></li>
+          <li><a href="index.php">Főoldal</a></li>
+                    <li>
+                        <a href="#">Termékek</a>
+                        <div>
+                            <a href="kutya.php">Kutya</a>
+                            <a href="cica.php">Cica</a>
+                            <a href="kisemlős.php">Kisemlős</a>
+                            <a href="madar.php">Madár</a>
+                            <a href="halakhullok.php">Hal, Hüllő</a>
+                        </div>
+                    </li>
+                    <li><a href="rolunk.php">Rólunk</a></li>
+                    <li><a href="Fórum.php">Fórum</a></li>
                 <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
           </ul>
         </nav>
@@ -115,7 +114,7 @@
               <ul>
                 <li><a href="#">Szállítás</a></li>
                 <li><a href="#">Árlista</a></li>
-                <li><a href="GYIK.html">GYIK</a></li>
+                <li><a href="GYIK.php">GYIK</a></li>
                 <li><a href="#">Adatvédelmi tájékoztató</a>
                 </li>
 
