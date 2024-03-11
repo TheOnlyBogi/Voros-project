@@ -30,7 +30,7 @@
                         </div>
                     </li>
                     <li><a href="rolunk.php">Rólunk</a></li>
-                    <li><a href="Fórum.php">Fórum</a></li>
+                    <li><a href="forum.php">Fórum</a></li>
               <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
             </ul>
           </nav>

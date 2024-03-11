@@ -1,8 +1,8 @@
 <?php
         $servername = "localhost";
-        $username = "your_username";
-        $password = "your_password";
-        $dbname = "forum_db";
+        $username = "root";
+        $password = "";
+        $dbname = "toppet";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
