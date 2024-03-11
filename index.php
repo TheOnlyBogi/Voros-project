@@ -111,7 +111,7 @@
                 <li><a href="#">TopPet Kft.</a></li>
                 <li><a href="#">7022 Győr Henye út 26.</a></li>
                 <li><a href="#">+36 20/744 5545</a></li>
-                <li><a href="mailto:top.pet.info@gmail.com">valami@gmail.com</a></li>
+                <li><a href="mailto:top.pet.info@gmail.com">top.pet.info@gmail.com</a></li>
               </ul>
             </div>
             <div class="footer-col">
