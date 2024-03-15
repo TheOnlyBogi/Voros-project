@@ -16,9 +16,9 @@
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
-          <nav>
+        <nav>
             <ul>
-            <li><a href="index.php">Főoldal</a></li>
+            <li><a href="fooldal.php">Főoldal</a></li>
                     <li>
                         <a href="#">Termékek</a>
                         <div>
@@ -30,8 +30,9 @@
                         </div>
                     </li>
                     <li><a href="rolunk.php">Rólunk</a></li>
-                    <li><a href="Fórum.php">Fórum</a></li>
+                    <li><a href="forum.php">Fórum</a></li>
               <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
+              <li style="float: right;"><a href="account.php" style="width:40px; height:40px; text-align: center;"><i class="	fa fa-user"></i></a></li>
             </ul>
           </nav>
         </div>

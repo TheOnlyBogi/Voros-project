@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halak és hüllők</title>
+    <title>Főoldal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -16,8 +16,7 @@
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
-        
-        <nav>
+          <nav>
             <ul>
             <li><a href="fooldal.php">Főoldal</a></li>
                     <li>
@@ -50,6 +49,37 @@
           }
       });
   </script>
+
+    <div class="containerbody">
+    <div class="sidebar">
+        <h2>Menü</h2>
+        <ul>
+        <li><a href="#bemv">Bemutatkozó videó</a></li>
+        <li><a href="#tutorial">A webshop használata</a></li>
+        </ul>
+    </div>
+    </div>
+    <br>
+    <div class="content" style="text-align: center; border: 2px dashed black;">
+        <h2 id="bemv">Bemutatkozás</h2>
+        <p>Ez a videó a cégnél dolgozó embereket mutatja be és munkájukat. </p>
+        <video src="" ></video>
+    </div>
+    <hr>
+    <div class="content" style="text-align: center; border: 2px dashed black;">
+        <h2 id="tutorial">A webshop használata</h2>
+        <p>Ez a videó a webshop használatát mutaja be lépésről lépésre. </p>
+
+        <video src="" ></video>
+
+    <h4 style="text-align: left;"> A videó tartalma szöveges formában</h4>
+    <details style="text-align: left;">
+        <summary style="padding-left: 5px;">Kattints, ha érdekel</summary>
+        <p style="padding-left: 20px;"> SZÖVEG <p>
+    </details>
+    </div>
+    <br>
+    
 
     <footer class="footer">
         <div class="containerfooter">
