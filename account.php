@@ -36,7 +36,7 @@ if (isset($_SESSION["user_id"])) {
         <div class="containerheader">
           <nav>
             <ul>
-            <li><a href="fooldal.php">Főoldal</a></li>
+            <li><a href="index.php">Főoldal</a></li>
                     <li>
                         <a href="#">Termékek</a>
                         <div>
@@ -49,8 +49,26 @@ if (isset($_SESSION["user_id"])) {
                     </li>
                     <li><a href="rolunk.php">Rólunk</a></li>
                     <li><a href="forum.php">Fórum</a></li>
-              <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
-              <li style="float: right;"><a href="login.php" style="width:40px; height:40px; text-align: center;"><i class="	fa fa-user"></i></a></li>
+              <li style="float: right;"><a href="kosar.php" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
+              <li style="float: right;">
+                    <a href="#" style="width:40px; height:40px; text-align: center;"><i class="	fa fa-user"></i></a>
+                        <div>
+                          <?php if (isset($user)): ?>
+        
+                            <a href="account.php">Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</a>
+
+        
+                          <p><a href="logout.php">Kijelentkezés</a></p>
+                        </div>
+                        <div>      
+                          <?php else: ?>
+        
+                            <a href="login.php">Bejelentkezés</a>
+                            <a href="signup.php">Regisztráció</a>
+        
+                          <?php endif; ?>
+                        </div>  
+              </li>
             </ul>
           </nav>
         </div>

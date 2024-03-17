@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = "SELECT * FROM user
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -14,11 +31,12 @@
       <div class="headerakcio">
         <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
+      <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
         
         <nav>
             <ul>
-            <li><a href="fooldal.php">Főoldal</a></li>
+            <li><a href="index.php">Főoldal</a></li>
                     <li>
                         <a href="#">Termékek</a>
                         <div>
@@ -31,8 +49,26 @@
                     </li>
                     <li><a href="rolunk.php">Rólunk</a></li>
                     <li><a href="forum.php">Fórum</a></li>
-              <li style="float: right;"><a href="kosar.html" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
-              <li style="float: right;"><a href="account.php" style="width:40px; height:40px; text-align: center;"><i class="	fa fa-user"></i></a></li>
+              <li style="float: right;"><a href="kosar.php" style="width:40px; height:40px; text-align: center;"><i class="fa fa-shopping-bag"></i></a></li>
+              <li style="float: right;">
+                    <a href="#" style="width:40px; height:40px; text-align: center;"><i class="	fa fa-user"></i></a>
+                        <div>
+                          <?php if (isset($user)): ?>
+        
+                            <a href="account.php">Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</a>
+
+        
+                          <p><a href="logout.php">Kijelentkezés</a></p>
+                        </div>
+                        <div>      
+                          <?php else: ?>
+        
+                            <a href="login.php">Bejelentkezés</a>
+                            <a href="signup.php">Regisztráció</a>
+        
+                          <?php endif; ?>
+                        </div>  
+              </li>
             </ul>
           </nav>
         </div>

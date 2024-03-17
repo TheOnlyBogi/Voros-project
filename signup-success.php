@@ -1,49 +1,51 @@
+
 <?php
 
-$is_invalid = false;
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_SESSION["user_id"])) {
     
     $mysqli = require __DIR__ . "/database.php";
     
-    $sql = sprintf("SELECT * FROM user
-                    WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
-    
+    $sql = "SELECT * FROM user
+            WHERE id = {$_SESSION["user_id"]}";
+            
     $result = $mysqli->query($sql);
     
     $user = $result->fetch_assoc();
-    
-    if ($user) {
-        
-        if (password_verify($_POST["password"], $user["password_hash"])) {
-            
-            session_start();
-            
-            session_regenerate_id();
-            
-            $_SESSION["user_id"] = $user["id"];
-            
-            header("Location: index.php");
-            exit;
-        }
-    }
-    
-    $is_invalid = true;
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bejelentkezés</title>
+    <title>Regisztráció sikeres</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        <?php include "style.css" ?>
+.signup_success {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.signup_success p {
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+.signup_success a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
+  background-color: cyan;
+  border-radius: 10px;
+}
+
+.signup_success a:hover {
+  color: white;
+}
     </style>
     
 </head>
@@ -107,29 +109,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           }
       });
   </script>
-  <div class="login-container">
-    <div class="login">
-        <h1>Bejelentkezés</h1>
-        <?php if ($is_invalid): ?>
-            <em>érvénytelen bejelentkezés</em>
-        <?php endif; ?>
-    </div>
-
-    <div class="login-adat">
-        <form method="post">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email"
-                value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
-        
-            <label for="password">Jelszó</label>
-            <input type="password" name="password" id="password">
-        
-            <button>Bejelentkezés</button>
-        </form>
-    </div>
-</div>
+    <div class="signup_success">
+        <h1>Sikeres regisztráció</h1>
     
-
+        <p>Mostmár bejelentkezhetsz.</p> 
+        <a href="login.php">Bejelentkezés</a>
+    </div>
     <footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">
@@ -180,9 +165,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </body>
 </html>
-
-
-
-
-
-
