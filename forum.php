@@ -1,90 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum Page</title>
-    <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        /* Comment styles */
-        .comment {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .comment p {
-            margin: 0;
-            font-size: 16px;
-            color: #333;
-        }
-
-        /* Reply form styles */
-        .reply-form {
-            margin-top: 10px;
-        }
-        .reply-form textarea {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            resize: vertical;
-            font-size: 14px;
-        }
-        .reply-form button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .reply-form button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Replies styles */
-        .replies {
-            margin-top: 10px;
-            padding-left: 20px;
-            border-left: 2px solid #007bff;
-        }
-        .replies p {
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="forumstyle.css">
+    <title>Fórum</title>
+    
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Forum</h1>
+        <h1>Üdv a fórumon</h1>
 
-       
+        <!-- Comment -->
+        <h2>Írd le mit gondolsz</h2>
+        <form method="post">
+            <textarea name="comment_content" rows="5" placeholder="Write your comment here..."></textarea><br>
+            <button type="submit" name="submit_comment">Közzététel</button>
+        </form>
 
+        <!-- PHP code for comments and replies goes here -->
+        <?php
+        // Database connection settings
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "toppet";
 
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // comment küldés
+        if (isset($_POST['submit_comment'])) {
+            $commentContent = $_POST['comment_content'];
+            $sql = "INSERT INTO comments (content) VALUES ('$commentContent')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo '<div class="comment">';
+                echo '<p>' . $commentContent . '</p>';
+                echo '</div>';
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+
+        // reply submission
+        if (isset($_POST['submit_reply'])) {
+            $replyContent = $_POST['reply_content'];
+            $commentId = $_POST['comment_id'];
+            $sql = "INSERT INTO replies (comment_id, content) VALUES ('$commentId', '$replyContent')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo '<p>Reply added successfully</p>';
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+
+        $conn->close();
+        ?>
     </div>
 </body>
 </html>
