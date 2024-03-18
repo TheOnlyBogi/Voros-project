@@ -135,7 +135,9 @@ if (isset($_SESSION["user_id"])) {
                 <li><a href="#">Szállítás</a></li>
                 <li><a href="#">Árlista</a></li>
                 <li><a href="GYIK.php">GYIK</a></li>
-                <li><a href="#">Adatvédelmi tájékoztató</a>
+                <li><a href="Adatvédelmi tájékoztató.docx" download>
+                    <p>Adatvédelmi tájékoztató</p>
+                  </a>
                 </li>
 
               </ul>
