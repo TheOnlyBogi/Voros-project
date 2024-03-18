@@ -58,6 +58,7 @@ if (isset($_SESSION["user_id"])) {
                             <a href="account.php">Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</a>
 
         
+
                             <a href="logout.php">Kijelentkezés</a>
                         </div>
                         <div>      

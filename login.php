@@ -80,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <a href="account.php">Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</a>
 
         
+
                           <a href="logout.php">Kijelentkezés</a>
                         </div>
                         <div>      
