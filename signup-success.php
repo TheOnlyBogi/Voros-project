@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -15,15 +16,37 @@ if (isset($_SESSION["user_id"])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Főoldal</title>
+    <title>Regisztráció sikeres</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.signup_success {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.signup_success p {
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+.signup_success a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
+  background-color: cyan;
+  border-radius: 10px;
+}
+
+.signup_success a:hover {
+  color: white;
+}
+    </style>
     
 </head>
 <body>
@@ -34,7 +57,8 @@ if (isset($_SESSION["user_id"])) {
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
-          <nav>
+        
+        <nav>
             <ul>
             <li><a href="index.php">Főoldal</a></li>
                     <li>
@@ -85,21 +109,12 @@ if (isset($_SESSION["user_id"])) {
           }
       });
   </script>
-  <div class="account">
-    <?php if (isset($user)): ?>
-        
-        <h1>Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</h1>
-        
-        <p><a href="logout.php">Kijelentkezés</a></p>
-  </div>
-  <div class="account_nemjo">      
-    <?php else: ?>
-        
-        <p><a href="login.php">Bejelentkezés</a> or <a href="signup.html">Regisztráció</a></p>
-        
-    <?php endif; ?>
-  </div>  
-
+    <div class="signup_success">
+        <h1>Sikeres regisztráció</h1>
+    
+        <p>Mostmár bejelentkezhetsz.</p> 
+        <a href="login.php">Bejelentkezés</a>
+    </div>
     <footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">

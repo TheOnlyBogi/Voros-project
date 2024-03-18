@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -21,10 +22,59 @@ if (isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Főoldal</title>
+    <title>Regisztráció</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="/js/validation.js" defer></script>
+
+    <style>
+        .signup {
+           text-align: center;
+           margin-top: 50px;
+       }
+       
+       .signup h1 {
+           margin-bottom: 20px;
+       }
+       
+       .signup form {
+           max-width: 400px;
+           margin: 0 auto; 
+       }
+       
+       .signup label {
+           display: block;
+           margin-bottom: 5px;
+       }
+       
+       .signup input[type="text"],
+       .signup input[type="email"],
+       .signup input[type="password"] {
+           width: calc(100% - 20px);
+           padding: 10px;
+           margin: 5px 0;
+           border: none;
+           border-radius: 10px;
+       }
+       
+       .signup button {
+           display: block;
+           width: calc(100% - 20px);
+           background-color: cyan;
+           color: black;
+           padding: 10px 0;
+           border: none;
+           border-radius: 10px;
+           cursor: pointer;
+           margin-top: 10px;
+       }
+       
+       .signup button:hover {
+           color: white;
+       }
+       
+           </style>
 </head>
 <body>
 
@@ -34,7 +84,8 @@ if (isset($_SESSION["user_id"])) {
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
-          <nav>
+        
+        <nav>
             <ul>
             <li><a href="index.php">Főoldal</a></li>
                     <li>
@@ -85,21 +136,27 @@ if (isset($_SESSION["user_id"])) {
           }
       });
   </script>
-  <div class="account">
-    <?php if (isset($user)): ?>
-        
-        <h1>Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</h1>
-        
-        <p><a href="logout.php">Kijelentkezés</a></p>
-  </div>
-  <div class="account_nemjo">      
-    <?php else: ?>
-        
-        <p><a href="login.php">Bejelentkezés</a> or <a href="signup.html">Regisztráció</a></p>
-        
-    <?php endif; ?>
-  </div>  
 
+  <div class="signup">
+    <h1>Regisztráció</h1>
+    
+    <form action="process-signup.php" method="post" id="signup" novalidate>
+        <div class="signup_input">
+            <label for="name">Név</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Jelszó</label>
+            <input type="password" id="password" name="password">
+
+            <label for="password_confirmation">Jelszó megerősítése</label>
+            <input type="password" id="password_confirmation" name="password_confirmation">
+        </div>
+        <div class="regisztraiogomb"><button>Regisztráció</button></div>
+    </form>
+</div>   
     <footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">
@@ -150,3 +207,12 @@ if (isset($_SESSION["user_id"])) {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
