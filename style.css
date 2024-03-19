@@ -511,5 +511,63 @@ ul{
   color: white;
 }
 
+.container {
+  width: 80%;
+  margin: 20px auto;
+}
 
 
+.container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* Message styling */
+.message-containerforum {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.messageforum {
+  margin-bottom: 10px;
+}
+.messageforum p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+.messageforum h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Reply styling */
+.replyforum {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-left: 40px;
+  padding: 10px;
+}
+
+/* Form styling */
+form {
+  margin-top: 20px;
+}
+form input[type="text"],
+form textarea,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
