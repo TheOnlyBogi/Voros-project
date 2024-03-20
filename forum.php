@@ -91,31 +91,67 @@
         }
 
         function displayMessages($conn) {
-            $sql = "SELECT * FROM messages";
+            $sql = "SELECT * FROM messages ORDER BY created_at DESC";
             $result = mysqli_query($conn, $sql);
-
+        
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="message">';
                     echo '<h3>' . $row["author"] . '</h3>';
                     echo '<p>' . $row["message"] . '</p>';
                     echo '<span class="timestamp">' . $row["created_at"] . '</span>';
+                    echo '<form action="" method="post">';
+                    echo '<input type="hidden" name="reply_to" value="' . $row["id"] . '">';
+                    echo '<input type="text" name="reply_author" placeholder="Név" required>';
+                    echo '<textarea name="reply_message" rows="2" placeholder="Válasz" required></textarea>';
+                    echo '<button type="submit" name="send_reply">Válasz küldése</button>';
+                    echo '</form>';
+                    displayReplies($conn, $row["id"]);
                     echo '</div>';
                 }
             } else {
                 echo "Nincsenek még üzenetek";
             }
         }
+        
+
+        function displayReplies($conn, $parent_id) {
+            $sql = "SELECT * FROM replies WHERE parent_id = $parent_id";
+            $result = mysqli_query($conn, $sql);
+        
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="reply">';
+                    // Check if the 'author' key exists in the row array before accessing it
+                    echo '<p>' . (isset($row["author"]) ? $row["author"] : "Anonymous") . ': ' . $row["message"] . '</p>';
+                    echo '</div>';
+                }
+            }
+        }
+        
 
         if (isset($_POST['send_message'])) {
             $author = isset($_POST['author']) ? $_POST['author'] : 'Anonymous';
             $message = $_POST['message'];
             $sql = "INSERT INTO messages (author, message) VALUES ('$author', '$message')";
             if (mysqli_query($conn, $sql)) {
-                echo '<div class="message">';
-                echo '<h3>' . $author . '</h3>';
-                echo '<p>' . $message . '</p>';
-                echo '</div>';
+                // Redirect back to the forum page after inserting the message
+                header("Location: forum.php");
+                exit(); // Make sure to exit after redirection to prevent further script execution
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+        }
+
+        if (isset($_POST['send_reply'])) {
+            $parent_id = $_POST['reply_to'];
+            $reply_author = $_POST['reply_author'];
+            $reply_message = $_POST['reply_message'];
+            $sql = "INSERT INTO replies (parent_id, message) VALUES ('$parent_id', '$reply_message')";
+            if (mysqli_query($conn, $sql)) {
+                // Redirect back to the forum page after inserting the reply
+                header("Location: forum.php");
+                exit(); // Make sure to exit after redirection to prevent further script execution
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
