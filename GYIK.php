@@ -24,9 +24,72 @@ if (isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .tab {
+        overflow: hidden;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+      }
+
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 15px 20px;
+        transition: 0.3s;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .tab button:hover {
+        background-color: #9fddf3;
+      }
+
+      .tab button.active {
+        background-color: cyan;
+      }
+
+      .tabcontent {
+        display: none;
+        padding: 20px;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      .tabcontent.active {
+        display: block;
+      }
+
+      h3 {
+        color: #333;
+        margin-bottom: 10px; 
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 15px; 
+      }
+    </style>
 </head>
 <body>
-
     <header class="header">
       <div class="headerakcio">
         <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
@@ -73,6 +136,88 @@ if (isset($_SESSION["user_id"])) {
         </div>
     </header>
   
+  <div class="container">
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'Szállítás')">Szállítás</button>
+      <button class="tablinks" onclick="openTab(event, 'Termékek')">Termékek</button>
+      <button class="tablinks" onclick="openTab(event, 'Fizetés')">Fizetés</button>
+      <button class="tablinks" onclick="openTab(event, 'Visszaküldés/Garancia')">Visszaküldés/Garancia</button>
+      <button class="tablinks" onclick="openTab(event, 'Kapcsolattartás')">Kapcsolattartás</button>
+      <button class="tablinks" onclick="openTab(event, 'Panaszok kezelése')">Panaszok kezelése</button>
+    </div>
+
+    <div id="Szállítás" class="tabcontent active">
+      <h3>Szállítás</h3>
+      <p>#1 Mennyi idő alatt érkezik meg a rendelésem?</p>
+      <p>Válasz</p>
+      <p>#2 Mennyibe kerül a szállítás?</p>
+      <p>Válasz</p>
+      <p>#3 Van lehetőség expressz szállításra?</p>
+      <p>Válasz</p>
+    </div>
+
+    <div id="Termékek" class="tabcontent">
+      <h3>Termékek</h3>
+      <p>#1 Milyen anyagból készült a termék?</p>
+      <p>Válasz</p>
+      <p>#2 Milyen garanciát vállalnak a termékre?</p>
+      <p>Válasz</p>
+    </div>
+
+    <div id="Fizetés" class="tabcontent">
+      <h3>Fizetés</h3>
+      <p>#1 Milyen fizetési módokat fogadnak el?</p>
+      <p>Válasz</p>
+      <p>#2 Biztonságos-e bankkártyás fizetni?</p>
+      <p>Válasz</p>
+      <p>#3 Lehet-e utánvéttel fizetni?</p>
+      <p>Válasz</p>
+    </div>
+
+    <div id="Visszaküldés/Garancia" class="tabcontent">
+      <h3>Visszaküldés/Garancia</h3>
+      <p>#1 Mi a visszaküldési és cserepolitika?</p>
+      <p>Válasz</p>
+      <p>#2 Milyen esetekben vállalnak garanciát a termékekre?</p>
+      <p>Válasz</p>
+      <p>#3 Mennyi idő áll rendelkezésre a visszaküldésre?</p>
+      <p>Válasz</p>
+    </div>
+
+    <div id="Kapcsolattartás" class="tabcontent">
+      <h3>Kapcsolattartás</h3>
+      <p>#1 Hogyan lehet kapcsolatba lépni az ügyfélszolgálattal?</p>
+      <p>Válasz</p>
+      <p>#2 Van lehetőség telefonos támogatásra?</p>
+      <p>Válasz</p>
+    </div>
+
+    <div id="Panaszok kezelése" class="tabcontent">
+      <h3>Panaszok kezelése</h3>
+      <p>#1 Milyen módon lehet panaszt benyújtani és hogyan fogják azt kezelni?</p>
+      <p>Válasz</p>
+      <p>#2 Mi a folyamat, ha elégedetlen vagyok a termékkel?</p>
+      <p>Válasz</p>
+    </div>
+  </div>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+  </script>
+
+
 <footer class="footer">
   <div class="containerfooter">
     <div class="rowfooter">
@@ -94,7 +239,7 @@ if (isset($_SESSION["user_id"])) {
           <li><a href="#">Árlista</a></li>
           <li><a href="GYIK.php">GYIK</a></li>
           <li><a href="Adatvédelmi tájékoztató.docx" download>
-                <p>Adatvédelmi tájékoztató</p>
+                Adatvédelmi tájékoztató
               </a>
           </li>
 
