@@ -576,3 +576,47 @@ form button {
   border: none;
   cursor: pointer;
 }
+
+.container {
+  width: 80%;
+  margin: auto;
+  background-color: cyan;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  text-align: justify;
+}
+
+.about {
+  font-weight: bold;
+}
+
+.reason-heading {
+  font-weight: bold;
+}
+
+.reason-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.reason-list li {
+  margin-bottom: 10px;
+}
+
+.reason-list a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.reason-list a:hover {
+  color: cyan;
+}
