@@ -80,7 +80,6 @@
         </form>
 
         <?php
-
         $db_host = "localhost";
         $db_user = "root";
         $db_pass = "";
@@ -93,7 +92,7 @@
         function displayMessages($conn) {
             $sql = "SELECT * FROM messages ORDER BY created_at DESC";
             $result = mysqli_query($conn, $sql);
-        
+
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="message">';
@@ -113,45 +112,45 @@
                 echo "Nincsenek még üzenetek";
             }
         }
-        
 
         function displayReplies($conn, $parent_id) {
             $sql = "SELECT * FROM replies WHERE parent_id = $parent_id";
             $result = mysqli_query($conn, $sql);
-        
+
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="reply">';
-                    // Check if the 'author' key exists in the row array before accessing it
+                    // Check if the 'author' key exists in the row array before trying to access it
                     echo '<p>' . (isset($row["author"]) ? $row["author"] : "Anonymous") . ': ' . $row["message"] . '</p>';
                     echo '</div>';
                 }
             }
         }
-        
 
         if (isset($_POST['send_message'])) {
             $author = isset($_POST['author']) ? $_POST['author'] : 'Anonymous';
             $message = $_POST['message'];
             $sql = "INSERT INTO messages (author, message) VALUES ('$author', '$message')";
             if (mysqli_query($conn, $sql)) {
+                // Redirect back to the forum page after inserting the
                 // Redirect back to the forum page after inserting the message
-                header("Location: forum.php");
-                exit(); // Make sure to exit after redirection to prevent further script execution
+                header("Location: {$_SERVER['PHP_SELF']}");
+                exit();
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
         }
 
         if (isset($_POST['send_reply'])) {
+            $author = isset($_POST['reply_author']) ? $_POST['reply_author'] : 'Anonymous';
             $parent_id = $_POST['reply_to'];
-            $reply_author = $_POST['reply_author'];
             $reply_message = $_POST['reply_message'];
-            $sql = "INSERT INTO replies (parent_id, message) VALUES ('$parent_id', '$reply_message')";
+
+            $sql = "INSERT INTO replies (parent_id, author, message) VALUES ('$parent_id', '$author', '$reply_message')";
             if (mysqli_query($conn, $sql)) {
                 // Redirect back to the forum page after inserting the reply
-                header("Location: forum.php");
-                exit(); // Make sure to exit after redirection to prevent further script execution
+                header("Location: {$_SERVER['PHP_SELF']}");
+                exit();
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
@@ -162,8 +161,6 @@
         mysqli_close($conn);
         ?>
 
-
-        
     </div>
 </body>
 </html>
