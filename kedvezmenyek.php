@@ -20,7 +20,7 @@ if (isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kosár</title>
+    <title>Kutya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
 
     <header class="header">
       <div class="headerakcio">
-        <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+        <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
@@ -60,7 +60,6 @@ if (isset($_SESSION["user_id"])) {
         
 
                             <a href="logout.php">Kijelentkezés</a>
-
                         </div>
                         <div>      
                           <?php else: ?>
@@ -75,18 +74,100 @@ if (isset($_SESSION["user_id"])) {
           </nav>
         </div>
     </header>
-    <script>
-      var currentLocation = window.location.href;
-      var navLinks = document.querySelectorAll('nav ul li a');
-  
-      navLinks.forEach(function(link) {
-          if (link.href === currentLocation) {
-              link.classList.add('VILÁGÍTS');
-          } else {
-              link.classList.remove('VILÁGÍTS');
-          }
-      });
-  </script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex; /* Flexbox layout */
+        flex-wrap: wrap; /* Ha kifut a konténerből, tördeljen */
+        justify-content: space-between; /* Távolság az elemek között */
+    }
+    .product {
+        width: calc(33.33% - 20px); /* Szélesség 33.33%, mínusz a margó */
+        background-color: #0ca2bd;
+        color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Árnyék hozzáadása */
+        transition: transform 0.3s ease; /* Animáció */
+    }
+    .product:hover {
+        transform: translateY(-5px); /* Kicsit felemelkedik, ha rávisz a kurzor */
+    }
+    .product img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Háttérszín animáció */
+    }
+    .btn:hover {
+        background-color: #45a049; /* Színváltás hoverre */
+      }
+    .kf {
+        color: red;
+        margin: 0 auto;
+      }
+    
+</style>
+
+
+<div class="kf">
+  <h1 >ÓRIÁSI KEDVEZMÉNYEK</h1>
+</div>
+
+
+<div class="container">
+    
+    <div class="product">
+            <img src="kep19.jpg" alt="Hüllő terrárium növény">
+            <h2>Hüllő terrárium növény</h2>
+            <small><s>1500ft</s></small>
+            <p>1200 Ft</p>
+            <p>Természetes megjelenésű műanyag növény hüllő terráriumokhoz, hogy otthonosabbá tegye a hüllők élőhelyét.</p>
+            <a href="#" class="btn">Kosárba</a>
+        </div>
+        <div class="product">
+        <img src="kep20.jpg" alt="Kisemlős játszóház">
+        <h2>Kisemlős játszóház</h2>
+        <small><s>2300ft</s></small>
+        <p>2000 Ft</p>
+        <p>Színes és strapabíró játszóház kisemlősöknek, amely kényelmes pihenőhelyet és szórakozást biztosít.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+    <div class="product">
+        <img src="madar_jatszofa.jpg" alt="Madár játszófa">
+        <h2>Madár játszófa</h2>
+        <small><s>3400ft</s></small>
+        <p>3000 Ft</p>
+        <p>Színes és interaktív madár játszófa, amely segíti a madarak szellemi és fizikai fejlődését.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+    <div class="product">
+    <img src="kep10.jpg" alt="Macska karmolófa">
+    <h2>Macska karmolófa</h2>
+    <small><s>5999ft</s></small>
+    <p>5000 Ft</p>
+    <p>Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.</p>
+    <a href="#" class="btn">Kosárba</a>
+  </div>
+</div>
+
     <footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">

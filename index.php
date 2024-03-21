@@ -45,6 +45,7 @@ if (isset($_SESSION["user_id"])) {
                             <a href="kisemlős.php">Kisemlős</a>
                             <a href="madar.php">Madár</a>
                             <a href="halakhullok.php">Hal, Hüllő</a>
+                            <a href="test.php">Hal, Hüllő</a>
                         </div>
                     </li>
                     <li><a href="rolunk.php">Rólunk</a></li>

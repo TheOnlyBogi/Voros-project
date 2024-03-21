@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
 
     <header class="header">
       <div class="headerakcio">
-        <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+        <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
@@ -85,7 +85,138 @@ if (isset($_SESSION["user_id"])) {
               link.classList.remove('VILÁGÍTS');
           }
       });
+      
+    
   </script>
+
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex; /* Flexbox layout */
+        flex-wrap: wrap; /* Ha kifut a konténerből, tördeljen */
+        justify-content: space-between; /* Távolság az elemek között */
+    }
+    .product {
+        width: calc(33.33% - 20px); /* Szélesség 33.33%, mínusz a margó */
+        background-color: #0ca2bd;
+        color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Árnyék hozzáadása */
+        transition: transform 0.3s ease; /* Animáció */
+    }
+    .product:hover {
+        transform: translateY(-5px); /* Kicsit felemelkedik, ha rávisz a kurzor */
+    }
+    .product img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Háttérszín animáció */
+    }
+    .btn:hover {
+        background-color: #45a049; /* Színváltás hoverre */
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="product">
+        <background-imgage src="./kepek/kutya_nyakorv.jpg" alt="Kutya nyakörv">
+        <h2>Kutya nyakörv</h2>
+        <p>Leírás: Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.</p>
+        <p>Ár: 2500 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_etetotal.jpg" alt="Kutya etetőtál">
+        <h2>Kutya etetőtál</h2>
+        <p>Leírás: Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.</p>
+        <p>Ár: 1500 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_poraz.jpg" alt="Kutya póráz">
+        <h2>Kutya póráz</h2>
+        <p>Leírás: Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.</p>
+        <p>Ár: 2000 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_halozsak.jpg" alt="Kutya hálózsák">
+        <h2>Kutya hálózsák</h2>
+        <p>Leírás: Kényelmes és puha hálózsák kutyáknak, ideális alváshoz és pihenéshez otthon vagy kirándulások során.</p>
+        <p>Ár: 4000 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_biztonsagiov.jpg" alt="Kutya biztonsági öv">
+        <h2>Kutya biztonsági öv
+        </h2>
+        <p>Leírás: Biztonsági öv kutyáknak az autóban, amely biztosítja a kutyád biztonságát és a vezetés zavartalan menetét.</p>
+        <p>Ár: 3000 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_ruha.webp" alt="Kutya öltöztető ruha">
+        <h2>Kutya öltöztető ruha</h2>
+        <p>Leírás: Divatos és kényelmes öltöztető ruha kutyáknak hideg időkre, amely megvédi őket a hidegtől és stílusos megjelenést biztosít.</p>
+        <p>Ár: 2500 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_husitomatrac.jpg" alt="Kutya hűsítő matrac">
+        <h2>Kutya hűsítő matrac</h2>
+        <p>Leírás: Hűsítő és légáteresztő matrac kutyáknak, amely segít megelőzni a túlmelegedést és biztosítja a kényelmet.</p>
+        <p>Ár: 3500 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_me.jpg" alt="Kutya masszázseszköz">
+        <h2>Kutya masszázseszköz</h2>
+        <p>Leírás: Kényelmes és hatékony masszázseszköz kutyáknak, amely segít lazítani az izmokat és javítja a vérkeringést.</p>
+        <p>Ár: 2000 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="./kepek/kutya_kabat.jpg" alt="Kutya kutyakabát">
+        <h2>Kutya kutyakabát</h2>
+        <p>Leírás: Vízálló és meleg kutyakabát hideg időkre, amely védi a kutyádat a nedvességtől és a hidegtől.</p>
+        <p>Ár: 3000 Ft</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+</div>
+
+
+
 
     <footer class="footer">
         <div class="containerfooter">
@@ -139,3 +270,4 @@ if (isset($_SESSION["user_id"])) {
 
 </body>
 </html>
+v

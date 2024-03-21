@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
 
     <header class="header">
       <div class="headerakcio">
-        <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+        <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
@@ -86,7 +86,129 @@ if (isset($_SESSION["user_id"])) {
           }
       });
   </script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex; /* Flexbox layout */
+        flex-wrap: wrap; /* Ha kifut a konténerből, tördeljen */
+        justify-content: space-between; /* Távolság az elemek között */
+    }
+    .product {
+        width: calc(33.33% - 20px); /* Szélesség 33.33%, mínusz a margó */
+        background-color: #0ca2bd;
+        color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Árnyék hozzáadása */
+        transition: transform 0.3s ease; /* Animáció */
+    }
+    .product:hover {
+        transform: translateY(-5px); /* Kicsit felemelkedik, ha rávisz a kurzor */
+    }
+    .product img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Háttérszín animáció */
+    }
+    .btn:hover {
+        background-color: #45a049; /* Színváltás hoverre */
+    }
+</style>
+<div class="container">
+    <div class="product">
+        <img src="madar_tollas_jatek.jpg" alt="Madár tollas játék">
+        <h2>Madár tollas játék</h2>
+        <p>800 Ft</p>
+        <p>Interaktív és szórakoztató tollas játék madaraknak, amely fejleszti a koordinációt és a játékot.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
 
+    <div class="product">
+        <img src="madar_fesu.jpg" alt="Madár fésű">
+        <h2>Madár fésű</h2>
+        <p>500 Ft</p>
+        <p>Kényelmes és puha fésű madaraknak, amely segíti a tollak ápolását és a kényelmes érzést.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="madar_hintaztato.jpg" alt="Madár hintáztató">
+        <h2>Madár hintáztató</h2>
+        <p>1000 Ft</p>
+        <p>Biztonságos és szórakoztató hintáztató madaraknak, amely stimulálja a mozgást és a játékot.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    
+
+    <div class="product">
+        <img src="madar_rago_jatek.jpg" alt="Madár rágó játék">
+        <h2>Madár rágó játék</h2>
+        <p>700 Ft</p>
+        <p>Biztonságos és szórakoztató rágó játék madaraknak, amely segíti a csőrük egészséges fenntartását és a játékot.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="madar_furdokad.jpg" alt="Madár fürdőkád">
+        <h2>Madár fürdőkád</h2>
+        <p>1600 Ft</p>
+        <p>Könnyen felszerelhető és tisztítható fürdőkád madaraknak, amely segíti a higiéniát és a tollak ápolását.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="madar_jatekkonyv.jpg" alt="Madár játékkönyv">
+        <h2>Madár játékkönyv</h2>
+        <p>1200 Ft</p>
+        <p>Interaktív és tanulást segítő játékkönyv madaraknak, amely fejleszti az érzékeket és az intelligenciát.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="madar_etetotal.jpg" alt="Madár etetőtál">
+        <h2>Madár etetőtál</h2>
+        <p>800 Ft</p>
+        <p>Könnyen tisztítható és tartós madár etetőtál, amely lehetővé teszi, hogy kedvenc madaraid kényelmesen táplálkozhassanak.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="madar_hinta.jpg" alt="Madár hinta">
+        <h2>Madár hinta</h2>
+        <p>1000 Ft</p>
+        <p>Színes és szórakoztató madár hinta, amely lehetővé teszi a madarak számára a szabad repülés érzését a ketrecben.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="madar_etetoallvany.jpg" alt="Madár etetőállvány">
+        <h2>Madár etetőállvány</h2>
+        <p>1200 Ft</p>
+        <p>Könnyen felállítható és tisztítható madár etetőállvány, amely lehetővé teszi a madarak kényelmes táplálkozását.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    
+</div>
     <footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">

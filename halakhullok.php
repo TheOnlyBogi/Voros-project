@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
 
     <header class="header">
       <div class="headerakcio">
-        <a href="Főoldal.html"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+        <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
@@ -86,6 +86,204 @@ if (isset($_SESSION["user_id"])) {
           }
       });
   </script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex; /* Flexbox layout */
+        flex-wrap: wrap; /* Ha kifut a konténerből, tördeljen */
+        justify-content: space-between; /* Távolság az elemek között */
+    }
+    .product {
+        width: calc(33.33% - 20px); /* Szélesség 33.33%, mínusz a margó */
+        background-color: #0ca2bd;
+        color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Árnyék hozzáadása */
+        transition: transform 0.3s ease; /* Animáció */
+    }
+    .product:hover {
+        transform: translateY(-5px); /* Kicsit felemelkedik, ha rávisz a kurzor */
+    }
+    .product img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Háttérszín animáció */
+    }
+    .btn:hover {
+        background-color: #45a049; /* Színváltás hoverre */
+    }
+</style> 
+<div class="container">
+    <div class="product">
+        <img src="kep1.jpg" alt="Akvárium dekoráció">
+        <h2>Akvárium dekoráció</h2>
+        <p>2000 Ft</p>
+        <p>Színes műanyag díszek akváriumokhoz, hogy otthonosabbá tegye halai számára az otthont.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep2.jpg" alt="Teknős hőlámpa">
+        <h2>Teknős hőlámpa</h2>
+        <p>3000 Ft</p>
+        <p>Infravörös hőlámpa teknősök számára, amely biztosítja a megfelelő hőmérsékletet és megvilágítást a terráriumban.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep3.jpg" alt="Hal akváriumszűrő">
+        <h2>Hal akváriumszűrő</h2>
+        <p>4000 Ft</p>
+        <p>Hatékony és csendes akváriumszűrő, amely tiszta és egészséges környezetet biztosít a halaknak.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+   
+
+    <div class="product">
+        <img src="kep4.jpg" alt="Hal élettér dísz">
+        <h2>Hal élettér dísz</h2>
+        <p>2500 Ft</p>
+        <p>Természetes megjelenésű műanyag dísz hal akváriumokhoz, amelyek élénkítik a víz alatti környezetet.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep5.jpg" alt="Hal élelem">
+        <h2>Hal élelem</h2>
+        <p>1500 Ft</p>
+        <p>Magas minőségű halélelem, amely biztosítja a halak egészséges táplálkozását és fejlődését.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep6.jpg" alt="Hal akváriumszűrő pumpa">
+        <h2>Hal akváriumszűrő pumpa</h2>
+        <p>3500 Ft</p>
+        <p>Erős és hatékony szűrő pumpa akváriumokhoz, amely tiszta és oxigénben gazdag környezetet biztosít a halaknak.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep7.jpg" alt="Hal akváriumdekor">
+        <h2>Hal akváriumdekor</h2>
+        <p>2000 Ft</p>
+        <p>Színes és élethű akváriumdekoráció, amely érdekesebbé teszi a halak élőhelyét és segíti őket a rejtekhelyek megtalálásában.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep8.jpg" alt="Hal élettér fenék dísz">
+        <h2>Hal élettér fenék dísz</h2>
+        <p>1200 Ft</p>
+        <p>Természetes megjelenésű műanyag dísz akváriumokhoz, amely díszíti a halak életterét és segíti azokat a természetes viselkedésükben.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep9.jpg" alt="Hal élelmiszertabletta">
+        <h2>Hal élelmiszertabletta</h2>
+        <p>1800 Ft</p>
+        <p>Tápláló és egészséges élelmiszertabletta halaknak, amely egyszerűvé teszi a táplálkozást és a táplálékadagolást.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep10.jpg" alt="Hal akvárium hőmérő">
+        <h2>Hal akvárium hőmérő</h2>
+        <p>700 Ft</p>
+        <p>Precíz és könnyen olvasható hőmérő akváriumokhoz, amely segít a megfelelő hőmérséklet fenntartásában a halak számára.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep11.jpg" alt="Hüllő hőmérő">
+        <h2>Hüllő hőmérő</h2>
+        <p>1500 Ft</p>
+        <p>Precíz és könnyen olvasható hőmérő hüllők terráriumához, amely segít a megfelelő hőmérséklet fenntartásában.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep12.jpg" alt="Hüllő táplálótál">
+        <h2>Hüllő táplálótál</h2>
+        <p>800 Ft</p>
+        <p>Könnyen tisztítható és tartós műanyag táplálótál hüllők számára, amely segíti a rendszeres és tiszta táplálkozást.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep13.jpg" alt="Hüllő csontváz dísz">
+        <h2>Hüllő csontváz dísz</h2>
+        <p>2000 Ft</p>
+        <p>Valósághű és különleges csontváz dísz hüllő terráriumokhoz, amelyek érdekesebbé teszik a terrárium belső kialakítását.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+
+
+    <div class="product">
+        <img src="kep14.jpg" alt="Hüllő napfénylámpa">
+        <h2>Hüllő napfénylámpa</h2>
+        <p>2500 Ft</p>
+        <p>UVB-sugárzó napfénylámpa hüllők terráriumához, amely segíti azokat a D-vitamin termelésében és az anyagcserében.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep15.jpg" alt="Hüllő hidegoldó">
+        <h2>Hüllő hidegoldó</h2>
+        <p>1200 Ft</p>
+        <p>Elektromos hidegoldó hüllők terráriumához, amely segít megakadályozni a túlzott hőmérsékletet a terráriumban.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep16.jpg" alt="Hüllő szőnyeg">
+        <h2>Hüllő szőnyeg</h2>
+        <p>600 Ft</p>
+        <p>Természetes hatású és könnyen tisztítható szőnyeg hüllők terráriumához, amely segíti a hüllők mozgását és kényelmét.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep17.jpg" alt="Hüllő terrárium dísz">
+        <h2>Hüllő terrárium dísz</h2>
+        <p>1800 Ft</p>
+        <p>Természetes megjelenésű műanyag dísz hüllő terráriumokhoz, hogy valósághűbbé tegye a környezetüket.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+    <div class="product">
+        <img src="kep18.jpg" alt="Hüllő lámpa állvány">
+        <h2>Hüllő lámpa állvány</h2>
+        <p>2000 Ft</p>
+        <p>Állítható hő- és fényforrás tartó állvány hüllők terráriumához, hogy megfelelő környezetet biztosítson számukra.</p>
+        <a href="#" class="btn">Kosárba</a>
+    </div>
+
+   
+</div>
 
     <footer class="footer">
         <div class="containerfooter">

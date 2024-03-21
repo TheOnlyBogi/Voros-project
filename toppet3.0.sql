@@ -1,4 +1,7 @@
-﻿create database if not exist toppet;
+
+
+CREATE DATABASe toppet;
+
 
 USE `toppet`;
 -- phpMyAdmin SQL Dump
@@ -19,7 +22,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Adatbázis: `toppet`
 --
@@ -523,6 +525,76 @@ ALTER TABLE `madar_termek`
 ALTER TABLE `megrendeles`
   ADD CONSTRAINT `megrendeles_ibfk_1` FOREIGN KEY (`megrendelő_id`) REFERENCES `megrendelő` (`megrendelő_id`),
   ADD CONSTRAINT `megrendeles_ibfk_2` FOREIGN KEY (`megrendeles_id`) REFERENCES `kosar` (`megrendeles_id`);
+COMMIT;
+
+
+
+
+CREATE TABLE `replies` (
+  `id` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `replies`
+--
+ALTER TABLE `replies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `parent_id` (`parent_id`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `replies`
+--
+ALTER TABLE `replies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `replies`
+--
+ALTER TABLE `replies`
+  ADD CONSTRAINT `replies_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `messages` (`id`);
+COMMIT;
+
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
