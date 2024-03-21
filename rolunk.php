@@ -84,6 +84,30 @@ if (isset($_SESSION["user_id"])) {
           }
       });
   </script>
+    <div class="container">
+        <div class="header">
+            <h1>Üdvözlünk a Top Pet Világában!</h1>
+        </div>
+        <div class="content">
+            <p class="about">Üdvözöljük a Top Pet-nél, ahol a házi kedvencek boldogsága és egészsége az elsődleges célunk. Cégünk elkötelezett amellett, hogy kiváló minőségű és innovatív háziállat kiegészítőket kínáljon, amelyek segítenek gazdáknak még szorosabb köteléket kialakítani hűséges társaikkal.</p>
+
+            <p class="reason-heading">**Miért válassz minket?**</p>
+            <ol class="reason-list">
+                <li>**Minőség:** Termékeink kizárólag a legjobb alapanyagokból készülnek, és szigorú minőségellenőrzésen mennek keresztül, hogy biztosítsuk az állatok biztonságát és kényelmét.</li>
+                <li>**Innováció:** A Top Pet csapata folyamatosan kutatja és fejleszti új termékeinket, hogy lépést tartson a legfrissebb trendekkel és technológiával a háziállatok világában.</li>
+                <li>**Széles választék:** Az állatfajtától és mérettől függetlenül széles választékot kínálunk termékeinkből, beleértve az étrend-kiegészítőket, játékokat, kényelmi termékeket és sok mást.</li>
+                <li>**Ügyfélszolgálat:** Az elégedett ügyfelek számunkra mindennél fontosabbak. Kiváló ügyfélszolgálati csapatunk mindig rendelkezésre áll, hogy segítsen Önnek bármilyen kérdésben vagy problémában.</li>
+            </ol>
+
+            <p class="about">**A Top Pet-ről**</p>
+            <p class="about">A Top Pet egy elismert és megbízható márka, amelyet szenvedélyes állatbarátok alapítottak. Célunk az, hogy minden háziállat tulajdonos számára elérhetővé tegyük a legjobb minőségű és megfizethető árú termékeket, amelyek segítenek az állatok boldogságában és egészségében.</p>
+
+            <p class="about">**Közösség és Felelősségvállalás**</p>
+            <p class="about">A Top Pet nem csupán egy vállalat, hanem egy közösség is, amely elkötelezett a környezetvédelem és az állatvédelem iránt. Cégünk felelős módon működik, és támogatja az állatok védelmét és jólétét szolgáló kezdeményezéseket.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
 
 <footer class="footer">
   <div class="containerfooter">
