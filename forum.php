@@ -15,7 +15,7 @@
             background-color: #9fddf3;
             color: #333;
         }
-        .container {
+        .containerforum {
             width: 80%;
             margin: 20px auto;
         }
@@ -113,7 +113,7 @@
       });
   </script>
 
-    <div class="container">
+    <div class="containerforum">
         <!-- Form -->
         <form action="" method="post">
             <input type="text" name="author" placeholder="Név">
