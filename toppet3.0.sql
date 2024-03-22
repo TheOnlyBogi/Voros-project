@@ -1,4 +1,4 @@
-
+﻿
 
 CREATE DATABASe toppet;
 
@@ -528,7 +528,32 @@ ALTER TABLE `megrendeles`
 COMMIT;
 
 
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 CREATE TABLE `replies` (
   `id` int(11) NOT NULL,
@@ -570,32 +595,7 @@ ALTER TABLE `replies`
 COMMIT;
 
 
-CREATE TABLE `messages` (
-  `id` int(11) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
---
--- Indexek a kiírt táblákhoz
---
-
---
--- A tábla indexei `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- A kiírt táblák AUTO_INCREMENT értéke
---
-
---
--- AUTO_INCREMENT a táblához `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
