@@ -16,7 +16,7 @@ if (isset($_SESSION["user_id"])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" style="font-family: monospace;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,6 @@ if (isset($_SESSION["user_id"])) {
     
     <style>
       body {
-        font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         margin: 0;
         padding: 0;
