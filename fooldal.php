@@ -120,10 +120,10 @@
             <div class="footer-col">
               <h4>Kövess Minket!</h4>
               <div class="social-links">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="https://www.youtube.com/channel/UCAjk-w0_bCCEpkNaPaPjHDw" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-facebook" target="_blank"></a>
+                <a href="#" class="fa fa-twitter" target="_blank"></a>
+                <a href="#" class="fa fa-instagram" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCAjk-w0_bCCEpkNaPaPjHDw" class="fa fa-youtube" target="_blank"></a>
               </div>
             </div>
           </div>

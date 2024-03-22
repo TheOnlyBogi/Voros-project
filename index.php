@@ -38,14 +38,13 @@ if (isset($_SESSION["user_id"])) {
             <ul>
             <li><a href="index.php">Főoldal</a></li>
                     <li>
-                        <a href="#">Termékek</a>
+                        <a>Termékek</a>
                         <div>
                             <a href="kutya.php">Kutya</a>
                             <a href="cica.php">Cica</a>
                             <a href="kisemlős.php">Kisemlős</a>
                             <a href="madar.php">Madár</a>
                             <a href="halakhullok.php">Hal, Hüllő</a>
-                            <a href="test.php">Hal, Hüllő</a>
                         </div>
                     </li>
                     <li><a href="rolunk.php">Rólunk</a></li>
@@ -159,10 +158,10 @@ if (isset($_SESSION["user_id"])) {
             <div class="footer-col">
               <h4>Kövess Minket!</h4>
               <div class="social-links">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="https://www.youtube.com/channel/UCAjk-w0_bCCEpkNaPaPjHDw" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-facebook" target="_blank"></a>
+                <a href="#" class="fa fa-twitter" target="_blank"></a>
+                <a href="#" class="fa fa-instagram" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCAjk-w0_bCCEpkNaPaPjHDw" class="fa fa-youtube" target="_blank"></a>
               </div>
             </div>
           </div>

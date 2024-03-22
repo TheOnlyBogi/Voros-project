@@ -81,7 +81,7 @@
         <div class="containerheader">
           <nav>
             <ul>
-            <li><a href="fooldal.php">Főoldal</a></li>
+            <li><a href="index.php">Főoldal</a></li>
                     <li>
                         <a href="#">Termékek</a>
                         <div>
