@@ -149,19 +149,19 @@ if (isset($_SESSION["user_id"])) {
     <div id="Szállítás" class="tabcontent active">
       <h3>Szállítás</h3>
       <p>#1 Mennyi idő alatt érkezik meg a rendelésem?</p>
-      <p>Válasz</p>
+      <p>Szállításod a lehető leghamarabb kiszállítjuk, körülbelül 3-5 nap</p>
       <p>#2 Mennyibe kerül a szállítás?</p>
-      <p>Válasz</p>
+      <p>Több fizetési mód közül választhatsz, de átlagosan 1500Ft</p>
       <p>#3 Van lehetőség expressz szállításra?</p>
-      <p>Válasz</p>
+      <p>Van lehetőség expressz szállításra, viszont ahhoz felárat számítunk fel</p>
     </div>
 
     <div id="Termékek" class="tabcontent">
       <h3>Termékek</h3>
       <p>#1 Milyen anyagból készült a termék?</p>
-      <p>Válasz</p>
+      <p>Termékeink változó összetételű anyagokból készült (gumi,szövet,pamut)</p>
       <p>#2 Milyen garanciát vállalnak a termékre?</p>
-      <p>Válasz</p>
+      <p>Termékeink a legjobb minőség ellenőrzésen esnek át, így nincs szükség garanciára</p>
     </div>
 
     <div id="Fizetés" class="tabcontent">
@@ -177,27 +177,25 @@ if (isset($_SESSION["user_id"])) {
     <div id="Visszaküldés/Garancia" class="tabcontent">
       <h3>Visszaküldés/Garancia</h3>
       <p>#1 Mi a visszaküldési és cserepolitika?</p>
-      <p>Válasz</p>
-      <p>#2 Milyen esetekben vállalnak garanciát a termékekre?</p>
-      <p>Válasz</p>
-      <p>#3 Mennyi idő áll rendelkezésre a visszaküldésre?</p>
-      <p>Válasz</p>
+      <p>A visszaküldési és cserepolitika részleteiről tájékoztatást kaphatsz az ügyfélszolgálaton keresztül. Általában tartalmazza a visszaküldés feltételeit, időkorlátokat és a cserelehetőségeket.</p>
+      <p>#2 Mennyi idő áll rendelkezésre a visszaküldésre?</p>
+      <p>Általában a visszaküldésre rendelkezésre álló időt az ügyfélszolgálaton keresztül tájékoztatják, de általában egy meghatározott időkeret van meghatározva, például 30 vagy 60 nap.</p>
     </div>
 
     <div id="Kapcsolattartás" class="tabcontent">
       <h3>Kapcsolattartás</h3>
       <p>#1 Hogyan lehet kapcsolatba lépni az ügyfélszolgálattal?</p>
-      <p>Válasz</p>
+      <p>Az ügyfélszolgálattal telefonon és e-mailen keresztül is kapcsolatba lehet lépni.</p>
       <p>#2 Van lehetőség telefonos támogatásra?</p>
-      <p>Válasz</p>
+      <p>Igen, rendelkezésre áll telefonos támogatás a problémák gyors és személyre szabott kezeléséhez.</p>
     </div>
 
     <div id="Panaszok kezelése" class="tabcontent">
       <h3>Panaszok kezelése</h3>
       <p>#1 Milyen módon lehet panaszt benyújtani és hogyan fogják azt kezelni?</p>
-      <p>Válasz</p>
+      <p>Panaszt telefonon, e-mailen vagy online űrlapon lehet benyújtani. A panaszokat gyorsan és hatékonyan kezelik, figyelembe véve az ügyfél aggályait és kéréseit.</p>
       <p>#2 Mi a folyamat, ha elégedetlen vagyok a termékkel?</p>
-      <p>Válasz</p>
+      <p>Ha elégedetlen vagy a termékkel, fordulj az ügyfélszolgálathoz, ismertesd a problémát, majd várd meg a megoldást vagy kérj vezetőségi beavatkozást.</p>
     </div>
   </div>
 
