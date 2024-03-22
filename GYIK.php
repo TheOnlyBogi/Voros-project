@@ -149,9 +149,9 @@ if (isset($_SESSION["user_id"])) {
     <div id="Szállítás" class="tabcontent active">
       <h3>Szállítás</h3>
       <p>#1 Mennyi idő alatt érkezik meg a rendelésem?</p>
-      <p>Válasz</p>
+      <p>Szállításod a lehető leghamarabb kiszállítjuk, körülbelül 3-5 nap</p>
       <p>#2 Mennyibe kerül a szállítás?</p>
-      <p>Válasz</p>
+      <p>Több fizetési mód közül választhatsz, de átlagosan 1500Ft</p>
       <p>#3 Van lehetőség expressz szállításra?</p>
       <p>Válasz</p>
     </div>
