@@ -153,15 +153,15 @@ if (isset($_SESSION["user_id"])) {
       <p>#2 Mennyibe kerül a szállítás?</p>
       <p>Több fizetési mód közül választhatsz, de átlagosan 1500Ft</p>
       <p>#3 Van lehetőség expressz szállításra?</p>
-      <p>Válasz</p>
+      <p>Van lehetőség expressz szállításra, viszont ahhoz felárat számítunk fel</p>
     </div>
 
     <div id="Termékek" class="tabcontent">
       <h3>Termékek</h3>
       <p>#1 Milyen anyagból készült a termék?</p>
-      <p>Válasz</p>
+      <p>Termékeink változó összetételű anyagokból készült (gumi,szövet,pamut)</p>
       <p>#2 Milyen garanciát vállalnak a termékre?</p>
-      <p>Válasz</p>
+      <p>Termékeink a legjobb minőség ellenőrzésen esnek át, így nincs szükség garanciára</p>
     </div>
 
     <div id="Fizetés" class="tabcontent">
