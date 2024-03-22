@@ -1,20 +1,20 @@
 <?php
-
 session_start();
 
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
+// Adatbázis kapcsolódás
+$mysqli = new mysqli("localhost", "root", "", "toppet");
+
+// Ellenőrizzük a kapcsolatot
+if ($mysqli->connect_error) {
+    die("Sikertelen kapcsolódás: " . $mysqli->connect_error);
 }
 
+// Lekérdezés a termékek táblából
+$sql = "SELECT * FROM kutya_termek";
+$result = $mysqli->query($sql);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -23,11 +23,10 @@ if (isset($_SESSION["user_id"])) {
     <title>Kutya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
       <div class="headerakcio">
         <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
@@ -74,24 +73,8 @@ if (isset($_SESSION["user_id"])) {
           </nav>
         </div>
     </header>
-    <script>
-      var currentLocation = window.location.href;
-      var navLinks = document.querySelectorAll('nav ul li a');
-  
-      navLinks.forEach(function(link) {
-          if (link.href === currentLocation) {
-              link.classList.add('VILÁGÍTS');
-          } else {
-              link.classList.remove('VILÁGÍTS');
-          }
-      });
-      
-    
-  </script>
 
-
-
-<style>
+    <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
@@ -139,86 +122,31 @@ if (isset($_SESSION["user_id"])) {
 </style>
 
 
-
 <div class="container">
-    <div class="product">
-        <background-imgage src="./kepek/kutya_nyakorv.jpg" alt="Kutya nyakörv">
-        <h2>Kutya nyakörv</h2>
-        <p>Leírás: Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.</p>
-        <p>Ár: 2500 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
+    <?php
+    // Ellenőrizze, hogy vannak-e eredmények a lekérdezésből
+    if ($result->num_rows > 0) {
+        // Iteráljunk végig a lekérdezett sorokon
+        while ($row = $result->fetch_assoc()) {
+            // Jelenítsük meg a termékeket
+            echo "<div class='product'>";
+            echo "<img src='{$row['kep']}' alt='{$row['nev']}'>";
+            echo "<h2>{$row['nev']}</h2>";
+            echo "<p>Leírás: {$row['leiras']}</p>";
+            echo "<p>Ár: {$row['ar']} Ft</p>";
+            echo "<a href='#' class='btn'>Kosárba</a>";
+            echo "</div>";
+        }
+    } else {
+        echo "Nincsenek termékek az adatbázisban.";
+    }
 
-    <div class="product">
-        <img src="./kepek/kutya_etetotal.jpg" alt="Kutya etetőtál">
-        <h2>Kutya etetőtál</h2>
-        <p>Leírás: Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.</p>
-        <p>Ár: 1500 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_poraz.jpg" alt="Kutya póráz">
-        <h2>Kutya póráz</h2>
-        <p>Leírás: Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.</p>
-        <p>Ár: 2000 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_halozsak.jpg" alt="Kutya hálózsák">
-        <h2>Kutya hálózsák</h2>
-        <p>Leírás: Kényelmes és puha hálózsák kutyáknak, ideális alváshoz és pihenéshez otthon vagy kirándulások során.</p>
-        <p>Ár: 4000 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_biztonsagiov.jpg" alt="Kutya biztonsági öv">
-        <h2>Kutya biztonsági öv
-        </h2>
-        <p>Leírás: Biztonsági öv kutyáknak az autóban, amely biztosítja a kutyád biztonságát és a vezetés zavartalan menetét.</p>
-        <p>Ár: 3000 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_ruha.webp" alt="Kutya öltöztető ruha">
-        <h2>Kutya öltöztető ruha</h2>
-        <p>Leírás: Divatos és kényelmes öltöztető ruha kutyáknak hideg időkre, amely megvédi őket a hidegtől és stílusos megjelenést biztosít.</p>
-        <p>Ár: 2500 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_husitomatrac.jpg" alt="Kutya hűsítő matrac">
-        <h2>Kutya hűsítő matrac</h2>
-        <p>Leírás: Hűsítő és légáteresztő matrac kutyáknak, amely segít megelőzni a túlmelegedést és biztosítja a kényelmet.</p>
-        <p>Ár: 3500 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_me.jpg" alt="Kutya masszázseszköz">
-        <h2>Kutya masszázseszköz</h2>
-        <p>Leírás: Kényelmes és hatékony masszázseszköz kutyáknak, amely segít lazítani az izmokat és javítja a vérkeringést.</p>
-        <p>Ár: 2000 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="./kepek/kutya_kabat.jpg" alt="Kutya kutyakabát">
-        <h2>Kutya kutyakabát</h2>
-        <p>Leírás: Vízálló és meleg kutyakabát hideg időkre, amely védi a kutyádat a nedvességtől és a hidegtől.</p>
-        <p>Ár: 3000 Ft</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
+    // Adatbázis kapcsolat bezárása
+    $mysqli->close();
+    ?>
 </div>
 
-
-
-
-    <footer class="footer">
+<footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">
             <div class="footer-col">
@@ -267,7 +195,5 @@ if (isset($_SESSION["user_id"])) {
         </div>
     </footer>
 
-
 </body>
 </html>
-v
