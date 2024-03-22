@@ -195,9 +195,9 @@ if (isset($_SESSION["user_id"])) {
     <div id="Panaszok kezelése" class="tabcontent">
       <h3>Panaszok kezelése</h3>
       <p>#1 Milyen módon lehet panaszt benyújtani és hogyan fogják azt kezelni?</p>
-      <p>Válasz</p>
+      <p>Panaszt telefonon, e-mailen vagy online űrlapon lehet benyújtani. A panaszokat gyorsan és hatékonyan kezelik, figyelembe véve az ügyfél aggályait és kéréseit.</p>
       <p>#2 Mi a folyamat, ha elégedetlen vagyok a termékkel?</p>
-      <p>Válasz</p>
+      <p>Ha elégedetlen vagy a termékkel, fordulj az ügyfélszolgálathoz, ismertesd a problémát, majd várd meg a megoldást vagy kérj vezetőségi beavatkozást.</p>
     </div>
   </div>
 
