@@ -555,6 +555,9 @@ ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
+ALTER TABLE messages ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+
 CREATE TABLE `replies` (
   `id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
