@@ -177,19 +177,17 @@ if (isset($_SESSION["user_id"])) {
     <div id="Visszaküldés/Garancia" class="tabcontent">
       <h3>Visszaküldés/Garancia</h3>
       <p>#1 Mi a visszaküldési és cserepolitika?</p>
-      <p>Válasz</p>
-      <p>#2 Milyen esetekben vállalnak garanciát a termékekre?</p>
-      <p>Válasz</p>
-      <p>#3 Mennyi idő áll rendelkezésre a visszaküldésre?</p>
-      <p>Válasz</p>
+      <p>A visszaküldési és cserepolitika részleteiről tájékoztatást kaphatsz az ügyfélszolgálaton keresztül. Általában tartalmazza a visszaküldés feltételeit, időkorlátokat és a cserelehetőségeket.</p>
+      <p>#2 Mennyi idő áll rendelkezésre a visszaküldésre?</p>
+      <p>Általában a visszaküldésre rendelkezésre álló időt az ügyfélszolgálaton keresztül tájékoztatják, de általában egy meghatározott időkeret van meghatározva, például 30 vagy 60 nap.</p>
     </div>
 
     <div id="Kapcsolattartás" class="tabcontent">
       <h3>Kapcsolattartás</h3>
       <p>#1 Hogyan lehet kapcsolatba lépni az ügyfélszolgálattal?</p>
-      <p>Válasz</p>
+      <p>Az ügyfélszolgálattal telefonon és e-mailen keresztül is kapcsolatba lehet lépni.</p>
       <p>#2 Van lehetőség telefonos támogatásra?</p>
-      <p>Válasz</p>
+      <p>Igen, rendelkezésre áll telefonos támogatás a problémák gyors és személyre szabott kezeléséhez.</p>
     </div>
 
     <div id="Panaszok kezelése" class="tabcontent">
