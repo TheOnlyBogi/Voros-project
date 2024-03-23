@@ -73,26 +73,26 @@ CREATE TABLE `hal_hullo_termek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 INSERT INTO `hal_hullo_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
-(1, 'Akvárium dekoráció', 2000, 'Színes műanyag díszek akváriumokhoz, hogy otthonosabbá tegye halai számára az otthont.', 0),
-(2, 'Teknős hőlámpa', 3000, 'Infravörös hőlámpa teknősök számára, amely biztosítja a megfelelő hőmérsékletet és megvilágítást a terráriumban.', 0),
-(3, 'Hal akváriumszűrő', 4000, 'Hatékony és csendes akváriumszűrő, amely tiszta és egészséges környezetet biztosít a halaknak.', 0),
-(4, 'Hal élettér dísz', 2500, 'Természetes megjelenésű műanyag dísz hal akváriumokhoz, amelyek élénkítik a víz alatti környezetet.', 0),
-(5, 'Hal élelem', 1500, 'Magas minőségű halélelem, amely biztosítja a halak egészséges táplálkozását és fejlődését.', 0),
-(6, 'Hal akváriumszűrő pumpa', 3500, 'Erős és hatékony szűrő pumpa akváriumokhoz, amely tiszta és oxigénben gazdag környezetet biztosít a halaknak.', 0),
-(7, 'Hal akváriumdekor', 2000, 'Színes és élethű akváriumdekoráció, amely érdekesebbé teszi a halak élőhelyét és segíti őket a rejtekhelyek megtalálásában.', 0),
-(8, 'Hal élettér fenék dísz', 1200, 'Természetes megjelenésű műanyag dísz akváriumokhoz, amely díszíti a halak életterét és segíti azokat a természetes viselkedésükben.', 0),
-(9, 'Hal élelmiszertabletta', 1800, 'Tápláló és egészséges élelmiszertabletta halaknak, amely egyszerűvé teszi a táplálkozást és a táplálékadagolást.', 0),
-(10, 'Hal akvárium hőmérő', 700, 'Precíz és könnyen olvasható hőmérő akváriumokhoz, amely segít a megfelelő hőmérséklet fenntartásában a halak számára.', 0),
-(11, 'Hal akvárium növény', 900, 'Élethű és könnyen gondozható műanyag akváriumnövény, amely díszíti a halak élőhelyét és oxigént termel.', 0);
-(12, 'Hüllő hőmérő', 1500, 'Precíz és könnyen olvasható hőmérő hüllők terráriumához, amely segít a megfelelő hőmérséklet fenntartásában.', 0),
-(20, 'Hüllő táplálótál', 800, 'Könnyen tisztítható és tartós műanyag táplálótál hüllők számára, amely segíti a rendszeres és tiszta táplálkozást.', 0),
-(13, 'Hüllő csontváz dísz', 2000, 'Valósághű és különleges csontváz dísz hüllő terráriumokhoz, amelyek érdekesebbé teszik a terrárium belső kialakítását.', 0),
-(14, 'Hüllő napfénylámpa', 2500, 'UVB-sugárzó napfénylámpa hüllők terráriumához, amely segíti azokat a D-vitamin termelésében és az anyagcserében.', 0),
-(15, 'Hüllő hidegoldó', 1200, 'Elektromos hidegoldó hüllők terráriumához, amely segít megakadályozni a túlzott hőmérsékletet a terráriumban.', 0),
-(16, 'Hüllő szőnyeg', 600, 'Természetes hatású és könnyen tisztítható szőnyeg hüllők terráriumához, amely segíti a hüllők mozgását és kényelmét.', 0),
-(17, 'Hüllő terrárium dísz', 1800, 'Természetes megjelenésű műanyag dísz hüllő terráriumokhoz, hogy valósághűbbé tegye a környezetüket.', 0),
-(18, 'Hüllő lámpa állvány', 2000, 'Állítható hő- és fényforrás tartó állvány hüllők terráriumához, hogy megfelelő környezetet biztosítson számukra.', 0),
-(19, 'Hüllő terrárium növény', 1200, 'Természetes megjelenésű műanyag növény hüllő terráriumokhoz, hogy otthonosabbá tegye a hüllők élőhelyét.', 0);
+(7, 'Akvárium dekoráció', 2000, 'Színes műanyag díszek akváriumokhoz, hogy otthonosabbá tegye halai számára az otthont.', 40),
+(8, 'Teknős hőlámpa', 3000, 'Infravörös hőlámpa teknősök számára, amely biztosítja a megfelelő hőmérsékletet és megvilágítást a terráriumban.', 41),
+(9, 'Hal akváriumszűrő', 4000, 'Hatékony és csendes akváriumszűrő, amely tiszta és egészséges környezetet biztosít a halaknak.', 42),
+(4, 'Hal élettér dísz', 2500, 'Természetes megjelenésű műanyag dísz hal akváriumokhoz, amelyek élénkítik a víz alatti környezetet.', 43),
+(5, 'Hal élelem', 1500, 'Magas minőségű halélelem, amely biztosítja a halak egészséges táplálkozását és fejlődését.', 44),
+(6, 'Hal akváriumszűrő pumpa', 3500, 'Erős és hatékony szűrő pumpa akváriumokhoz, amely tiszta és oxigénben gazdag környezetet biztosít a halaknak.', 45),
+(1, 'Hal akváriumdekor', 2000, 'Színes és élethű akváriumdekoráció, amely érdekesebbé teszi a halak élőhelyét és segíti őket a rejtekhelyek megtalálásában.', 46),
+(2, 'Hal élettér fenék dísz', 1200, 'Természetes megjelenésű műanyag dísz akváriumokhoz, amely díszíti a halak életterét és segíti azokat a természetes viselkedésükben.', 47),
+(3, 'Hal élelmiszertabletta', 1800, 'Tápláló és egészséges élelmiszertabletta halaknak, amely egyszerűvé teszi a táplálkozást és a táplálékadagolást.', 48),
+(10, 'Hal akvárium hőmérő', 700, 'Precíz és könnyen olvasható hőmérő akváriumokhoz, amely segít a megfelelő hőmérséklet fenntartásában a halak számára.', 49),
+(11, 'Hal akvárium növény', 900, 'Élethű és könnyen gondozható műanyag akváriumnövény, amely díszíti a halak élőhelyét és oxigént termel.', 50),
+(12, 'Hüllő hőmérő', 1500, 'Precíz és könnyen olvasható hőmérő hüllők terráriumához, amely segít a megfelelő hőmérséklet fenntartásában.', 51),
+(20, 'Hüllő táplálótál', 800, 'Könnyen tisztítható és tartós műanyag táplálótál hüllők számára, amely segíti a rendszeres és tiszta táplálkozást.', 52),
+(13, 'Hüllő csontváz dísz', 2000, 'Valósághű és különleges csontváz dísz hüllő terráriumokhoz, amelyek érdekesebbé teszik a terrárium belső kialakítását.', 53),
+(14, 'Hüllő napfénylámpa', 2500, 'UVB-sugárzó napfénylámpa hüllők terráriumához, amely segíti azokat a D-vitamin termelésében és az anyagcserében.', 54),
+(15, 'Hüllő hidegoldó', 1200, 'Elektromos hidegoldó hüllők terráriumához, amely segít megakadályozni a túlzott hőmérsékletet a terráriumban.', 55),
+(16, 'Hüllő szőnyeg', 600, 'Természetes hatású és könnyen tisztítható szőnyeg hüllők terráriumához, amely segíti a hüllők mozgását és kényelmét.', 56),
+(17, 'Hüllő terrárium dísz', 1800, 'Természetes megjelenésű műanyag dísz hüllő terráriumokhoz, hogy valósághűbbé tegye a környezetüket.', 57),
+(18, 'Hüllő lámpa állvány', 2000, 'Állítható hő- és fényforrás tartó állvány hüllők terráriumához, hogy megfelelő környezetet biztosítson számukra.', 58),
+(19, 'Hüllő terrárium növény', 1200, 'Természetes megjelenésű műanyag növény hüllő terráriumokhoz, hogy otthonosabbá tegye a hüllők élőhelyét.', 59);
 
 -- --------------------------------------------------------
 
@@ -321,7 +321,7 @@ INSERT INTO `kepek_id` (`kep_id`, `url`) VALUES
 (28, 'https://ablakhaz.hu/wp-content/uploads/2024/01/februari-kert-madareteto.jpg'),
 (29, 'https://i.pepita.hu/images/product/7013476/trixie-jatek-madaraknak-natur-31-cm-58993_64309284_1200x630.jpg'),
 (30, 'https://glirex.hu/image/cache/catalog/uj/muanyagjkerke/muakerfix0014-1227x817.jpg'),
-(31, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(31, 'https://webshop.fressnapf.hu/wp-content/uploads/2021/07/1333941-416x175.jpg'),
 (32, 'https://iskolaellato.hu/img/80027/PB-1133/PB-1133.webp'),
 (33, 'https://glirex.hu/image/cache/catalog/uj/uj%20n%C3%B6v%C3%A9nyek/ygapfoaslfix1-1223x810.jpg'),
 (34, 'https://webshop.fressnapf.hu/wp-content/uploads/2020/04/1296528.png'),
@@ -330,11 +330,26 @@ INSERT INTO `kepek_id` (`kep_id`, `url`) VALUES
 (37, 'https://i.ytimg.com/vi/f9MKWvwGSo4/maxresdefault.jpg'),
 (38, 'https://dafincsi.hu/wp-content/uploads/2023/12/Kiki-jatszoter.jpg'),
 (39, 'https://webshop.fressnapf.hu/wp-content/uploads/2020/04/1242820-416x249.png'),
-(40, 'https://www.pet4you.hu/img/big/1205.jpg'),
-(41, 'https://www.pet4you.hu/img/big/1205.jpg'),
-(42, 'https://www.pet4you.hu/img/big/1205.jpg'),
-(43, 'https://www.pet4you.hu/img/big/1205.jpg'),
-(44, 'https://www.pet4you.hu/img/big/1205.jpg');
+(40, 'https://i.pepita.hu/images/product/5223765/zolux-bambusz-haziko-akvarium-dekoracio-11x75x95cm_56343526_1200x630.jpg'),
+(41, 'https://www.terrariumkeszites.hu/images/vilagitas.png'),
+(42, 'https://i.pepita.hu/images/product/571507/hailea-hl-bt1000-akvariumi-belso-szuro-1000-lh-20-w-90-360-l_31458250_1200x630.jpg'),
+(43, 'https://s8.badu.bg/photos/551645/800x538_63c6b68274cfa.jpg'),
+(44, 'https://591c6ebc5b.cbaul-cdnwnd.com/779efac90fb8531f5e9e336310cde4b5/200000074-352983529a/s-l1600.jpg?ph=591c6ebc5b'),
+(45, 'https://i.pepita.hu/images/product/6742963/akvarium-szuropumpa-aktiv-szennel-600l-ora_80311455_1200x630.jpg'),
+(46, 'https://i.pepita.hu/images/product/570520/mufa-akvarium-dekor-550-x-180-x-325-mm_31457263_1200x630.jpg'),
+(47, 'https://i.pepita.hu/images/product/570586/happet-kincseslada-levegoporlasztos-akvarium-dekoracio_31457329_1200x630.jpg'),
+(48, 'https://ik.imagekit.io/ellns2dxik/img/product/summernote/vegan-100-spirulina-adalekanyagmentes-mikroalga-120-tabletta-natur-tanya-3def184ad8f4755ff269862ea77393dd.jpg'),
+(49, 'https://kutyubazar.hu/65528-large_default/19677-digitalis-akvarium-homero.html.jpg'),
+(50, 'https://blog.tetra.net/hu-hu/wp-content/uploads/2019/05/nepszeru-akvariumi-novenyek.jpg'),
+(51, 'https://www.mobilehome.hu/img/58534/2371540/500x500/2371540.webp?time=1700147417.jpg'),
+(52, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0s-xo1UtYQH3NxONi89v2KZR-BuAUUt1yQg&usqp=CAU'),
+(53, 'https://images.prom.ua/3091113153_w640_h640_svetodiodnyj-akvariumnyj-svetilnik.jpg'),
+(54, 'https://tmreptiles.eu/image/cache/catalog/termekek/terrarium-felszerelesek/ho-es-paratartalom-merok-termosztatok/trixie-thermostat-hygrostat-1200x900.jpg'),
+(55, 'https://cdn.rtl.hu/c3/8a/louisiana-aligator-kutyaajto_image_e7f12c73ad1025a56666d1125399'),
+(56, 'https://www.terrariumkeszites.hu/pluginAppObj/pluginAppObj_16_22/Hatter-17_fw.jpg'),
+(57, 'https://www.terrariumkeszites.eu/images/Lampa-uj-tipusu-5_sh1bkru2.png'),
+(58, 'https://kertlap.hu/wp-content/uploads/terrarium-ajandekozas.jpg'),
+(59, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWuIO5FOvaSWiTI7CcwX1_z2MKH8QQX0sDFw&usqp=CAU');
 
 
 
