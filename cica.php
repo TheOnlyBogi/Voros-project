@@ -1,18 +1,17 @@
 <?php
-
 session_start();
 
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
+// Adatbázis kapcsolódás
+$mysqli = new mysqli("localhost", "root", "", "toppet");
+
+// Ellenőrizzük a kapcsolatot
+if ($mysqli->connect_error) {
+    die("Sikertelen kapcsolódás: " . $mysqli->connect_error);
 }
+
+// Lekérdezés a termékek táblából
+$sql = "SELECT * FROM macska_termek";
+$result = $mysqli->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -136,80 +135,28 @@ if (isset($_SESSION["user_id"])) {
 
 <body>
 
-<<div class="container">
-    <div class="product">
-        <img src="./kepek/cica.jpg">
-        <h2>Macska cicakaparó</h2>
-        <p>2500 Ft</p>
-        <p>Tartós és strapabíró cicakaparó macskáknak, amely segít megelőzni a karmolászást a bútorokon és a falakon.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
+<div class="container">
+    <?php
+    // Ellenőrizze, hogy vannak-e eredmények a lekérdezésből
+    if ($result->num_rows > 0) {
+        // Iteráljunk végig a lekérdezett sorokon
+        while ($row = $result->fetch_assoc()) {
+            // Jelenítsük meg a termékeket
+            echo "<div class='product'>";
+            echo "<img src='{$row['kep']}' alt='{$row['nev']}'>";
+            echo "<h2>{$row['nev']}</h2>";
+            echo "<p>Leírás: {$row['leiras']}</p>";
+            echo "<p>Ár: {$row['ar']} Ft</p>";
+            echo "<a href='#' class='btn'>Kosárba</a>";
+            echo "</div>";
+        }
+    } else {
+        echo "Nincsenek termékek az adatbázisban.";
+    }
 
-    <div class="product">
-        <img src="kep2.jpg" alt="Macska alomtisztító lapát">
-        <h2>Macska alomtisztító lapát</h2>
-        <p>1000 Ft</p>
-        <p>Kényelmes és praktikus alomtisztító lapát macskákhoz, amely segíti a gyors és hatékony alomtisztítást.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep3.jpg" alt="Macska játékszer labirintus">
-        <h2>Macska játékszer labirintus</h2>
-        <p>1800 Ft</p>
-        <p>Interaktív és szórakoztató labirintus játékszer macskáknak, amely fejleszti az intelligenciát és a készségeket.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <!-- Itt folytatódik a további 7 termék -->
-
-    <div class="product">
-        <img src="kep4.jpg" alt="Macska hordozható WC">
-        <h2>Macska hordozható WC</h2>
-        <p>2800 Ft</p>
-        <p>Praktikus és könnyen hordozható WC macskáknak utazáshoz vagy kis lakásokba.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep5.jpg" alt="Macska játékszer madárfog">
-        <h2>Macska játékszer madárfog</h2>
-        <p>600 Ft</p>
-        <p>Színes és mozgó játékszer macskáknak, amely segíti a vadászösztönt és a szórakozást.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep6.jpg" alt="Macska cső">
-        <h2>Macska cső</h2>
-        <p>1800 Ft</p>
-        <p>Szórakoztató és szöszmözölő cső macskáknak, amely segíti a mozgást és a játékot.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep7.jpg" alt="Macska hintaág">
-        <h2>Macska hintaág</h2>
-        <p>3500 Ft</p>
-        <p>Szórakoztató és kényelmes hintaág macskáknak, amely segít az aktív játékban és pihenésben egyaránt.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep8.jpg" alt="Macska alomtálca">
-        <h2>Macska alomtálca</h2>
-        <p>3000 Ft</p>
-        <p>
-        Szagsemlegesítő fedővel ellátott macska alomtálca, amely kényelmes és higiénikus környezetet biztosít a macskák számára.
-        </p>
-        <a href="#" class="btn">Kosárba</a>
-        </div>
-        <div class="product">
-    <img src="kep9.jpg" alt="Macska játékszer egér">
-    <h2>Macska játékszer egér</h2>
-    <p>500 Ft</p>
-    <p>Puha és mozgó játék egér macskáknak, amely stimulálja a vadászösztönt és a játékot.</p>
-    <a href="#" class="btn">Kosárba</a>
+    // Adatbázis kapcsolat bezárása
+    $mysqli->close();
+    ?>
 </div>
 
 
