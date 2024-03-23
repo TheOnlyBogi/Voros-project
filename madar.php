@@ -15,20 +15,18 @@ $result = $mysqli->query($sql);
 
 ?>
 
-?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madár</title>
+    <title>Kutya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
       <div class="headerakcio">
         <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
@@ -59,8 +57,8 @@ $result = $mysqli->query($sql);
                             <a href="account.php">Üdvözlünk <?= htmlspecialchars($user["name"]) ?>!</a>
 
         
-                            <a href="logout.php">Kijelentkezés</a>
 
+                            <a href="logout.php">Kijelentkezés</a>
                         </div>
                         <div>      
                           <?php else: ?>
@@ -75,19 +73,8 @@ $result = $mysqli->query($sql);
           </nav>
         </div>
     </header>
-    <script>
-      var currentLocation = window.location.href;
-      var navLinks = document.querySelectorAll('nav ul li a');
-  
-      navLinks.forEach(function(link) {
-          if (link.href === currentLocation) {
-              link.classList.add('VILÁGÍTS');
-          } else {
-              link.classList.remove('VILÁGÍTS');
-          }
-      });
-  </script>
-<style>
+
+    <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
@@ -109,15 +96,18 @@ $result = $mysqli->query($sql);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Árnyék hozzáadása */
         transition: transform 0.3s ease; /* Animáció */
+        text-align: center; /* Szöveg középre igazítása */
     }
     .product:hover {
         transform: translateY(-5px); /* Kicsit felemelkedik, ha rávisz a kurzor */
     }
     .product img {
-        max-width: 100px;
+        max-width: 200px; /* Kép maximális szélessége */
         height: auto;
         margin-bottom: 10px;
         border-radius: 10px;
+        display: block; /* Eltávolítja a felesleges helyet az img elemek körül */
+        margin: 0 auto; /* Kép középre igazítása */
     }
     .btn {
         background-color: #4CAF50;
@@ -133,6 +123,9 @@ $result = $mysqli->query($sql);
         background-color: #45a049; /* Színváltás hoverre */
     }
 </style>
+
+
+
 <div class="container">
     <?php
     // Ellenőrizze, hogy vannak-e eredmények a lekérdezésből
@@ -141,7 +134,23 @@ $result = $mysqli->query($sql);
         while ($row = $result->fetch_assoc()) {
             // Jelenítsük meg a termékeket
             echo "<div class='product'>";
-            echo "<img src='{$row['kep']}' alt='{$row['nev']}'>";
+            
+            // Lekérjük az adott termékhez tartozó kép elérési útvonalát az adatbázisból
+
+            $kep_id = $row['kepek_id']; // helyesen: kep_id
+            $sql_kep = "SELECT url FROM kepek_id WHERE kep_id = ?";
+            $stmt = $mysqli->prepare($sql_kep);
+            $stmt->bind_param("i", $kep_id);
+            $stmt->execute();
+            $result_kep = $stmt->get_result();
+
+            if ($result_kep->num_rows > 0) {
+                $row_kep = $result_kep->fetch_assoc();
+                $kep_url = $row_kep['url'];
+                echo "<img src='" . $kep_url . "' alt='{$row['nev']}'>";
+            } else {
+                echo "Nincs kép az adatbázisban az adott azonosítóval.";
+            }
             echo "<h2>{$row['nev']}</h2>";
             echo "<p>Leírás: {$row['leiras']}</p>";
             echo "<p>Ár: {$row['ar']} Ft</p>";
@@ -156,7 +165,9 @@ $result = $mysqli->query($sql);
     $mysqli->close();
     ?>
 </div>
-    <footer class="footer">
+
+
+<footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">
             <div class="footer-col">
@@ -166,15 +177,16 @@ $result = $mysqli->query($sql);
                 <li><a href="https://www.google.com/maps/place/Budapest/@47.4808722,18.8501225,10z/data=!3m1!4b1!4m5!3m4!1s0x4741c334d1d4cfc9:0x400c4290c1e1160!8m2!3d47.497912!4d19.040235" target="_blank">Budapest</a></li>
                 <li><a href="https://www.google.com/maps/place/P%C3%A9cs/@46.0776474,18.1104982,11z/data=!3m1!4b1!4m5!3m4!1s0x4742b111ea3252e3:0x400c4290c1e1200!8m2!3d46.0727345!4d18.232266" target="_blank">Pécs</a></li>
                 <li><a href="https://www.google.com/maps/place/Debrecen/@47.5305732,21.3800015,10z/data=!3m1!4b1!4m5!3m4!1s0x47470c2afe5e2b83:0x400c4290c1e1170!8m2!3d47.5316049!4d21.6273124" target="_blank">Debrecen</a></li>
-                <li><a href="https://www.google.com/maps/place/Szeged/@46.2327035,20.0003853,11z/data=!3m1!4b1!4m5!3m4!1s0x474487e22bcce54b:0x400c4290c1e1190!8m2!3d46.2530102!4d20.1414253" target="_blank">Szeged</a></li>
-                <li><a href="https://www.google.com/maps/place/Veszpr%C3%A9m/@47.1257777,17.8372088,12z/data=!3m1!4b1!4m5!3m4!1s0x47699add028c2f91:0x400c4290c1e1210!8m2!3d47.1028087!4d17.9093019" target="_blank">Veszprém</a></li>
+                <li><a href="#">Szeged</a></li>
+                <li><a href="#">Veszprém</a></li>
               </ul>
             </div>
             <div class="footer-col">
               <h4>Oldalak</h4>
               <ul>
                 <li><a href="#">Szállítás</a></li>
-                <li><a href="#">Árlista</a></li>
+                <li><a href
+                ="#">Árlista</a></li>
                 <li><a href="GYIK.php">GYIK</a></li>
                 <li><a href="Adatvédelmi tájékoztató.docx" download>
                     <p>Adatvédelmi tájékoztató</p>
@@ -204,7 +216,6 @@ $result = $mysqli->query($sql);
           </div>
         </div>
     </footer>
-
 
 </body>
 </html>
