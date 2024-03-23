@@ -134,16 +134,16 @@ CREATE TABLE `kisemlos_termek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 INSERT INTO `kisemlos_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
-(1, 'Kisemlős futókerék', 1500, 'Kényelmes és biztonságos futókerék kisemlősök számára, amely segít fenntartani az egészségüket és formájukat.', 0),
-(2, 'Kisemlős takaróház', 1800, 'Puha és meleg takaróház kisemlősök számára, amely biztosítja a kényelmet és biztonságot.', 0),
-(3, 'Kisemlős játék guruló labda', 800, 'Színes és mozgó játék labda kisemlősök számára, amely stimulálja a mozgást és az érzékeket.', 0),
-(4, 'Kisemlős alom', 1000, 'Szagtalan és pormentes kisemlős alom, amely biztosítja a higiéniás környezetet és a kényelmet.', 0),
-(5, 'Kisemlős fésű', 700, 'Puha sörtéjű fésű kisemlősök szőrzetének ápolásához és tisztításához.', 0),
-(6, 'Kisemlős hám', 1500, 'Kényelmes és állítható kisemlős hám, amely segíti a séták során történő irányítást és biztonságos vezetést.', 0),
-(7, 'Kisemlős futólabda', 1300, 'Állítható és biztonságos futólabda kisemlősöknek, amely stimulálja a mozgást és a szórakozást.', 0),
-(8, 'Kisemlős labirintus játék', 1500, 'Színes és interaktív labirintus játék kisemlősöknek, amely fejleszti az intelligenciát és a készségeket.', 0),
-(9, 'Kisemlős játszótér', 2500, 'Színes és változatos játszótér kisemlősöknek, amely segíti a mozgást és a szórakozást.', 0),
-(10, 'Kisemlős játszóház', 2000, 'Színes és strapabíró játszóház kisemlősöknek, amely kényelmes pihenőhelyet és szórakozást biztosít.', 0);
+(1, 'Kisemlős futókerék', 1500, 'Kényelmes és biztonságos futókerék kisemlősök számára, amely segít fenntartani az egészségüket és formájukat.', 30),
+(2, 'Kisemlős takaróház', 1800, 'Puha és meleg takaróház kisemlősök számára, amely biztosítja a kényelmet és biztonságot.', 31),
+(3, 'Kisemlős játék guruló labda', 800, 'Színes és mozgó játék labda kisemlősök számára, amely stimulálja a mozgást és az érzékeket.', 32),
+(4, 'Kisemlős alom', 1000, 'Szagtalan és pormentes kisemlős alom, amely biztosítja a higiéniás környezetet és a kényelmet.', 33),
+(5, 'Kisemlős fésű', 700, 'Puha sörtéjű fésű kisemlősök szőrzetének ápolásához és tisztításához.', 34),
+(6, 'Kisemlős hám', 1500, 'Kényelmes és állítható kisemlős hám, amely segíti a séták során történő irányítást és biztonságos vezetést.', 35),
+(7, 'Kisemlős futólabda', 1300, 'Állítható és biztonságos futólabda kisemlősöknek, amely stimulálja a mozgást és a szórakozást.', 36),
+(8, 'Kisemlős labirintus játék', 1500, 'Színes és interaktív labirintus játék kisemlősöknek, amely fejleszti az intelligenciát és a készségeket.', 37),
+(9, 'Kisemlős játszótér', 2500, 'Színes és változatos játszótér kisemlősöknek, amely segíti a mozgást és a szórakozást.', 38),
+(10, 'Kisemlős játszóház', 2000, 'Színes és strapabíró játszóház kisemlősöknek, amely kényelmes pihenőhelyet és szórakozást biztosít.', 39);
 
 -- --------------------------------------------------------
 
@@ -234,16 +234,16 @@ CREATE TABLE `madar_termek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 INSERT INTO `madar_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
-(201, 'Madár tollas játék', 800, 'Interaktív és szórakoztató tollas játék madaraknak, amely fejleszti a koordinációt és a játékot.', 0),
-(202, 'Madár fésű', 500, 'Kényelmes és puha fésű madaraknak, amely segíti a tollak ápolását és a kényelmes érzést.', 0),
-(203, 'Madár hintáztató', 1000, 'Biztonságos és szórakoztató hintáztató madaraknak, amely stimulálja a mozgást és a játékot.', 0),
-(204, 'Madár rágó játék', 700, 'Biztonságos és szórakoztató rágó játék madaraknak, amely segíti a csőrük egészséges fenntartását és a játékot.', 0),
-(205, 'Madár fürdőkád', 1600, 'Könnyen felszerelhető és tisztítható fürdőkád madaraknak, amely segíti a higiéniát és a tollak ápolását.', 0),
-(206, 'Madár játékkönyv', 1200, 'Interaktív és tanulást segítő játékkönyv madaraknak, amely fejleszti az érzékeket és az intelligenciát.', 0),
-(207, 'Madár etetőtál', 800, 'Könnyen tisztítható és tartós madár etetőtál, amely lehetővé teszi, hogy kedvenc madaraid kényelmesen táplálkozhassanak.', 0),
-(208, 'Madár hinta', 1000, 'Színes és szórakoztató madár hinta, amely lehetővé teszi a madarak számára a szabad repülés érzését a ketrecben.', 0),
-(209, 'Madár etetőállvány', 1200, 'Könnyen felállítható és tisztítható madár etetőállvány, amely lehetővé teszi a madarak kényelmes táplálkozását.', 0),
-(210, 'Madár játszófa', 3000, 'Színes és interaktív madár játszófa, amely segíti a madarak szellemi és fizikai fejlődését.', 0);
+(201, 'Madár fajáték', 800, 'Interaktív és szórakoztató fa játék madaraknak, amely fejleszti a koordinációt és a játékot.', 20),
+(202, 'Madár fésű', 500, 'Kényelmes és puha fésű madaraknak, amely segíti a tollak ápolását és a kényelmes érzést.', 21),
+(203, 'Madár hintáztató', 1000, 'Biztonságos és szórakoztató hintáztató madaraknak, amely stimulálja a mozgást és a játékot.', 22),
+(204, 'Madár rágó játék', 700, 'Biztonságos és szórakoztató rágó játék madaraknak, amely segíti a csőrük egészséges fenntartását és a játékot.', 23),
+(205, 'Madár fürdőkád', 1600, 'Könnyen felszerelhető és tisztítható fürdőkád madaraknak, amely segíti a higiéniát és a tollak ápolását.', 24),
+(206, 'Madár függő izé', 1200, 'Interaktív és unaloműző segítő játék madaraknak, amely fejleszti az érzékeket és az intelligenciát.', 25),
+(207, 'Madár etetőtál', 800, 'Könnyen tisztítható és tartós madár etetőtál, amely lehetővé teszi, hogy kedvenc madaraid kényelmesen táplálkozhassanak.', 26),
+(208, 'Madár hinta', 1000, 'Színes és szórakoztató madár hinta, amely lehetővé teszi a madarak számára a szabad repülés érzését a ketrecben.', 27),
+(209, 'Madár etetőállvány', 1200, 'Könnyen felállítható és tisztítható madár etetőállvány, amely lehetővé teszi a madarak kényelmes táplálkozását.', 28),
+(210, 'Madár játszófa', 3000, 'Színes és interaktív madár játszófa, amely segíti a madarak szellemi és fizikai fejlődését.', 29);
 
 
 -- --------------------------------------------------------
@@ -310,8 +310,31 @@ INSERT INTO `kepek_id` (`kep_id`, `url`) VALUES
 (17, 'https://hernacana.cdn.shoprenter.hu/custom/hernacana/image/cache/w800h424/Blog/alomtalca/macska-alomtalca.jpg?lastmod=0.1667915883.jpg'),
 (18, 'https://kovazoo.cdn.shoprenter.hu/custom/kovazoo/image/cache/w900h500wt1/trixie/tri/hu_40344.jpg?lastmod=1704904673.1482236000.jpg'),
 (19, 'https://i.pepita.hu/images/product/760643/xxl-5-szintes-macska-kaparofa-jatszohaz-szurke_83950783_1200x630.jpg'),
-(20, 'https://fittsport.com/image/503928759.jpg'),
-(21, 'https://fittsport.com/image/503928759.jpg');
+(20, 'https://cdn.myshoptet.com/usr/www.parrotclub.hu/user/shop/big/2919_kalitkos-jatek-madaraknak-hinta-43x32cm.png?6384b94e'),
+(21, 'https://www.alpet.hu/wp-content/uploads/2019/02/fesusszellozo.jpg'),
+(22, 'https://dafincsi.hu/wp-content/uploads/2019/10/Duvo-sz%C3%ADnes-mad%C3%A1rhinta.jpg'),
+(23, 'https://cdn.myshoptet.com/usr/www.parrotclub.hu/user/shop/big/3252_jatek-papagajoknak-es-madaraknak-fa-ragoka-1eks.png?6384b973'),
+(24, 'https://cdn.pixabay.com/photo/2022/09/03/07/42/dove-7428958_960_720.jpg'),
+(25, 'https://i.pepita.hu/images/product/5224244/duvo-szines-fuggo-jatek-rafiabol-bambuszbol-es-kokuszbol-egzotikus-madaraknak-s-241x64x64cm_56344126_1200x630.jpg'),
+(26, 'https://www.nadland.hu/media/product/331/fuggo-madar-eteto-itato-fem-f01.jpg'),
+(27, 'https://i.pepita.hu/images/product/7013483/trixie-hinta-45-30cm-madaraknak-termeszetes-anyagbol-58746_64309327_1200x630.jpg'),
+(28, 'https://ablakhaz.hu/wp-content/uploads/2024/01/februari-kert-madareteto.jpg'),
+(29, 'https://i.pepita.hu/images/product/7013476/trixie-jatek-madaraknak-natur-31-cm-58993_64309284_1200x630.jpg'),
+(30, 'https://glirex.hu/image/cache/catalog/uj/muanyagjkerke/muakerfix0014-1227x817.jpg'),
+(31, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(32, 'https://iskolaellato.hu/img/80027/PB-1133/PB-1133.webp'),
+(33, 'https://glirex.hu/image/cache/catalog/uj/uj%20n%C3%B6v%C3%A9nyek/ygapfoaslfix1-1223x810.jpg'),
+(34, 'https://webshop.fressnapf.hu/wp-content/uploads/2020/04/1296528.png'),
+(35, 'https://vitalpet.hu/img/4951/TRX-61513_altpic_1/TRX-61513.jpg?time=1644225317'),
+(36, 'https://www.fressnapf.hu/wp-content/uploads/2018/05/shutterstock_1023727873.jpg'),
+(37, 'https://i.ytimg.com/vi/f9MKWvwGSo4/maxresdefault.jpg'),
+(38, 'https://dafincsi.hu/wp-content/uploads/2023/12/Kiki-jatszoter.jpg'),
+(39, 'https://webshop.fressnapf.hu/wp-content/uploads/2020/04/1242820-416x249.png'),
+(40, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(41, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(42, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(43, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(44, 'https://www.pet4you.hu/img/big/1205.jpg');
 
 
 
