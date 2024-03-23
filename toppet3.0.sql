@@ -189,15 +189,17 @@ INSERT INTO `kutya_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
 (53, 'Kutya nyakörv', 2500, 'Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.', 1),
 (54, 'Kutya etetőtál', 1500, 'Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.', 2),
 (55, 'Kutya póráz', 2000, 'Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.', 3),
+<<<<<<< HEAD
 (56, 'Kutya hálózsák', 4000, 'Kényelmes és puha hálózsák kutyáknak, ideális alváshoz és pihenéshez otthon vagy kirándulások során.',4),
 (57, 'Kutya biztonsági öv', 3000, 'Biztonsági öv kutyáknak az autóban, amely biztosítja a kutyád biztonságát és a vezetés zavartalan menetét.', 5),
 (58, 'Kutya öltöztető ruha', 2500, 'Divatos és kényelmes öltöztető ruha kutyáknak hideg időkre, amely megvédi őket a hidegtől és stílusos megjelenést biztosít.', 6),
 (59, 'Kutya hűsítő matrac', 3500, 'Hűsítő és légáteresztő matrac kutyáknak, amely segít megelőzni a túlmelegedést és biztosítja a kényelmet.', 7),
 (60, 'Kutya masszázseszköz', 2000, 'Kényelmes és hatékony masszázseszköz kutyáknak, amely segít lazítani az izmokat és javítja a vérkeringést.', 8),
 (61, 'Kutya kutyakabát', 3000, 'Vízálló és meleg kutyakabát hideg időkre, amely védi a kutyádat a nedvességtől és a hidegtől.', 9);
---
+
+
 -- Tábla szerkezet ehhez a táblához `macska_termek`
---
+
 
 CREATE TABLE `macska_termek` (
   `id` int(11) NOT NULL,
@@ -285,6 +287,7 @@ CREATE TABLE `termekek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 CREATE TABLE `kepek_id` (
+<<<<<<< HEAD
     `kep_id` INT PRIMARY KEY,
     `url` VARCHAR(255)
 );
