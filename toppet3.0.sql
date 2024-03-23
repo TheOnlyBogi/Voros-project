@@ -209,16 +209,16 @@ CREATE TABLE `macska_termek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 INSERT INTO `macska_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
-(1, 'Macska cicakaparó', 2500, 'Tartós és strapabíró cicakaparó macskáknak, amely segít megelőzni a karmolászást a bútorokon és a falakon.', 0),
-(2, 'Macska alomtisztító lapát', 1000, 'Kényelmes és praktikus alomtisztító lapát macskákhoz, amely segíti a gyors és hatékony alomtisztítást.', 0),
-(3, 'Macska játékszer labirintus', 1800, 'Interaktív és szórakoztató labirintus játékszer macskáknak, amely fejleszti az intelligenciát és a készségeket.', 0),
-(4, 'Macska hordozható WC', 2800, 'Praktikus és könnyen hordozható WC macskáknak utazáshoz vagy kis lakásokba.', 0),
-(5, 'Macska játékszer madárfog', 600, 'Színes és mozgó játékszer macskáknak, amely segíti a vadászösztönt és a szórakozást.', 0),
-(6, 'Macska cső', 1800, 'Szórakoztató és szöszmözölő cső macskáknak, amely segíti a mozgást és a játékot.', 0),
-(7, 'Macska hintaág', 3500, 'Szórakoztató és kényelmes hintaág macskáknak, amely segít az aktív játékban és pihenésben egyaránt.', 0),
-(8, 'Macska alomtálca', 3000, 'Szagsemlegesítő fedővel ellátott macska alomtálca, amely kényelmes és higiénikus környezetet biztosít a macskák számára.', 0),
-(9, 'Macska játékszer egér', 500, 'Puha és mozgó játék egér macskáknak, amely stimulálja a vadászösztönt és a játékot.', 0),
-(10, 'Macska karmolófa', 5000, 'Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.', 0);
+(1, 'Macska cicakaparó', 2500, 'Tartós és strapabíró cicakaparó macskáknak, amely segít megelőzni a karmolászást a bútorokon és a falakon.', 10),
+(2, 'Macska alomtisztító lapát', 1000, 'Kényelmes és praktikus alomtisztító lapát macskákhoz, amely segíti a gyors és hatékony alomtisztítást.', 11),
+(3, 'Macska játékszer labirintus', 1800, 'Interaktív és szórakoztató labirintus játékszer macskáknak, amely fejleszti az intelligenciát és a készségeket.', 12),
+(4, 'Macska hordozható WC', 2800, 'Praktikus és könnyen hordozható WC macskáknak utazáshoz vagy kis lakásokba.', 13),
+(5, 'Macska játékszer madárfog', 600, 'Színes és mozgó játékszer macskáknak, amely segíti a vadászösztönt és a szórakozást.', 14),
+(6, 'Macska cső', 1800, 'Szórakoztató és szöszmözölő cső macskáknak, amely segíti a mozgást és a játékot.', 15),
+(7, 'Macska hintaág', 3500, 'Szórakoztató és kényelmes hintaág macskáknak, amely segít az aktív játékban és pihenésben egyaránt.', 16),
+(8, 'Macska alomtálca', 3000, 'Szagsemlegesítő fedővel ellátott macska alomtálca, amely kényelmes és higiénikus környezetet biztosít a macskák számára.', 17),
+(9, 'Macska játékszer egér', 500, 'Puha és mozgó játék egér macskáknak, amely stimulálja a vadászösztönt és a játékot.', 18),
+(10, 'Macska karmolófa', 5000, 'Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.', 19);
 -- --------------------------------------------------------
 
 --
@@ -299,7 +299,19 @@ INSERT INTO `kepek_id` (`kep_id`, `url`) VALUES
 (6, 'https://cdn.myshoptet.com/usr/www.heliumking.hu/user/shop/big/17004_kostym-pre-psov-nevesta--meret-kutya-l-.jpg?624e2d57'),
 (7, 'https://i.pepita.hu/images/product/1039480/zolta-xl-premium-kisallat-husito-matrac-70x120cm_33172526_1200x630.jpg'),
 (8, 'https://fittsport.com/image/503928759.jpg'),
-(9, 'https://kutyaruhazat.hu/uploads/import/_cukipro1.jpg');
+(9, 'https://kutyaruhazat.hu/uploads/import/_cukipro1.jpg'),
+(10, 'https://vitalpet.hu/img/4951/TRX-43262/500x500/TRX-43262.jpg'),
+(11, 'https://kutyubazar.hu/47020-large_default/11521-magikus-macskaalom-lapat.html.jpg'),
+(12, 'https://www.mall.hu/i/84754186/550/550'),
+(13, 'https://catmania.hu/wp-content/uploads/2020/03/nyitott-macska-wc.jpg'),
+(14, 'https://www.pet4you.hu/img/big/1205.jpg'),
+(15, 'https://otthon24.hu/wp-content/uploads/2015/11/cica-kozlekedes2.jpg'),
+(16, 'https://catmania.hu/wp-content/uploads/2020/04/macska-fuggoagy.jpg'),
+(17, 'https://hernacana.cdn.shoprenter.hu/custom/hernacana/image/cache/w800h424/Blog/alomtalca/macska-alomtalca.jpg?lastmod=0.1667915883.jpg'),
+(18, 'https://kovazoo.cdn.shoprenter.hu/custom/kovazoo/image/cache/w900h500wt1/trixie/tri/hu_40344.jpg?lastmod=1704904673.1482236000.jpg'),
+(19, 'https://i.pepita.hu/images/product/760643/xxl-5-szintes-macska-kaparofa-jatszohaz-szurke_83950783_1200x630.jpg'),
+(20, 'https://fittsport.com/image/503928759.jpg'),
+(21, 'https://fittsport.com/image/503928759.jpg');
 
 
 
