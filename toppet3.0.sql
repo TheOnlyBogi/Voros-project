@@ -195,6 +195,7 @@ INSERT INTO `kutya_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
 (59, 'Kutya hűsítő matrac', 3500, 'Hűsítő és légáteresztő matrac kutyáknak, amely segít megelőzni a túlmelegedést és biztosítja a kényelmet.', 7),
 (60, 'Kutya masszázseszköz', 2000, 'Kényelmes és hatékony masszázseszköz kutyáknak, amely segít lazítani az izmokat és javítja a vérkeringést.', 8),
 (61, 'Kutya kutyakabát', 3000, 'Vízálló és meleg kutyakabát hideg időkre, amely védi a kutyádat a nedvességtől és a hidegtől.', 9);
+
 --
 -- Tábla szerkezet ehhez a táblához `macska_termek`
 --

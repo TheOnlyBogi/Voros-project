@@ -136,13 +136,14 @@ $result = $mysqli->query($sql);
             echo "<div class='product'>";
             
             // Lekérjük az adott termékhez tartozó kép elérési útvonalát az adatbázisból
+
             $kep_id = $row['kepek_id']; // helyesen: kep_id
             $sql_kep = "SELECT url FROM kepek_id WHERE kep_id = ?";
             $stmt = $mysqli->prepare($sql_kep);
             $stmt->bind_param("i", $kep_id);
             $stmt->execute();
             $result_kep = $stmt->get_result();
-            
+
             if ($result_kep->num_rows > 0) {
                 $row_kep = $result_kep->fetch_assoc();
                 $kep_url = $row_kep['url'];
@@ -150,7 +151,6 @@ $result = $mysqli->query($sql);
             } else {
                 echo "Nincs kép az adatbázisban az adott azonosítóval.";
             }
-
             echo "<h2>{$row['nev']}</h2>";
             echo "<p>Leírás: {$row['leiras']}</p>";
             echo "<p>Ár: {$row['ar']} Ft</p>";
