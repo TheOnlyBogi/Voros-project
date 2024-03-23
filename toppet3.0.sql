@@ -186,15 +186,15 @@ CREATE TABLE `kutya_termek` (
 
 -- --------------------------------------------------------
 INSERT INTO `kutya_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
-(53, 'Kutya nyakörv', 2500, 'Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.', 0),
-(54, 'Kutya etetőtál', 1500, 'Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.', 0),
-(55, 'Kutya póráz', 2000, 'Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.', 0),
-(56, 'Kutya hálózsák', 4000, 'Kényelmes és puha hálózsák kutyáknak, ideális alváshoz és pihenéshez otthon vagy kirándulások során.', 0),
-(57, 'Kutya biztonsági öv', 3000, 'Biztonsági öv kutyáknak az autóban, amely biztosítja a kutyád biztonságát és a vezetés zavartalan menetét.', 0),
-(58, 'Kutya öltöztető ruha', 2500, 'Divatos és kényelmes öltöztető ruha kutyáknak hideg időkre, amely megvédi őket a hidegtől és stílusos megjelenést biztosít.', 0),
-(59, 'Kutya hűsítő matrac', 3500, 'Hűsítő és légáteresztő matrac kutyáknak, amely segít megelőzni a túlmelegedést és biztosítja a kényelmet.', 0),
-(60, 'Kutya masszázseszköz', 2000, 'Kényelmes és hatékony masszázseszköz kutyáknak, amely segít lazítani az izmokat és javítja a vérkeringést.', 0),
-(61, 'Kutya kutyakabát', 3000, 'Vízálló és meleg kutyakabát hideg időkre, amely védi a kutyádat a nedvességtől és a hidegtől.', 0);
+(53, 'Kutya nyakörv', 2500, 'Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.', 1),
+(54, 'Kutya etetőtál', 1500, 'Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.', 2),
+(55, 'Kutya póráz', 2000, 'Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.', 3),
+(56, 'Kutya hálózsák', 4000, 'Kényelmes és puha hálózsák kutyáknak, ideális alváshoz és pihenéshez otthon vagy kirándulások során.',4),
+(57, 'Kutya biztonsági öv', 3000, 'Biztonsági öv kutyáknak az autóban, amely biztosítja a kutyád biztonságát és a vezetés zavartalan menetét.', 5),
+(58, 'Kutya öltöztető ruha', 2500, 'Divatos és kényelmes öltöztető ruha kutyáknak hideg időkre, amely megvédi őket a hidegtől és stílusos megjelenést biztosít.', 6),
+(59, 'Kutya hűsítő matrac', 3500, 'Hűsítő és légáteresztő matrac kutyáknak, amely segít megelőzni a túlmelegedést és biztosítja a kényelmet.', 7),
+(60, 'Kutya masszázseszköz', 2000, 'Kényelmes és hatékony masszázseszköz kutyáknak, amely segít lazítani az izmokat és javítja a vérkeringést.', 8),
+(61, 'Kutya kutyakabát', 3000, 'Vízálló és meleg kutyakabát hideg időkre, amely védi a kutyádat a nedvességtől és a hidegtől.', 9);
 --
 -- Tábla szerkezet ehhez a táblához `macska_termek`
 --
@@ -283,6 +283,24 @@ CREATE TABLE `termekek` (
   `leiras` text COLLATE utf8_hungarian_ci DEFAULT NULL,
   `kategoria_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `kepek_id` (
+    `kep_id` INT PRIMARY KEY,
+    `url` VARCHAR(255)
+);
+
+INSERT INTO `kepek_id` (`kep_id`, `url`) VALUES
+(1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrDHbRQhuDPA70CzxjPOA7s604J-qwyxFn5g&usqp=CAU'),
+(2, 'https://cdn.babamamaoutlet.hu/wp-content/uploads/2016/03/20160321_104123.jpg'),
+(3, 'https://www.zooplus.hu/magazin/wp-content/uploads/2018/10/Melyik-a-legjobb-p%C3%B3r%C3%A1z-a-kuty%C3%A1mnak.jpg'),
+(4, 'https://whyld-river.com/cdn/shop/products/3-in-bag_800x.jpg?v=1628454828'),
+(5, 'https://audishop.hu/wp-content/uploads/2018/05/8X0019409A.jpg'),
+(6, 'https://cdn.myshoptet.com/usr/www.heliumking.hu/user/shop/big/17004_kostym-pre-psov-nevesta--meret-kutya-l-.jpg?624e2d57'),
+(7, 'https://i.pepita.hu/images/product/1039480/zolta-xl-premium-kisallat-husito-matrac-70x120cm_33172526_1200x630.jpg'),
+(8, 'https://fittsport.com/image/503928759.jpg'),
+(9, 'https://kutyaruhazat.hu/uploads/import/_cukipro1.jpg');
+
+
 
 --
 -- A tábla adatainak kiíratása `termekek`
