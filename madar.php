@@ -1,18 +1,19 @@
 <?php
-
 session_start();
 
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
+// Adatbázis kapcsolódás
+$mysqli = new mysqli("localhost", "root", "", "toppet");
+
+// Ellenőrizzük a kapcsolatot
+if ($mysqli->connect_error) {
+    die("Sikertelen kapcsolódás: " . $mysqli->connect_error);
 }
+
+// Lekérdezés a termékek táblából
+$sql = "SELECT * FROM madar_termek";
+$result = $mysqli->query($sql);
+
+?>
 
 ?>
 <!DOCTYPE html>
@@ -133,81 +134,27 @@ if (isset($_SESSION["user_id"])) {
     }
 </style>
 <div class="container">
-    <div class="product">
-        <img src="madar_tollas_jatek.jpg" alt="Madár tollas játék">
-        <h2>Madár tollas játék</h2>
-        <p>800 Ft</p>
-        <p>Interaktív és szórakoztató tollas játék madaraknak, amely fejleszti a koordinációt és a játékot.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
+    <?php
+    // Ellenőrizze, hogy vannak-e eredmények a lekérdezésből
+    if ($result->num_rows > 0) {
+        // Iteráljunk végig a lekérdezett sorokon
+        while ($row = $result->fetch_assoc()) {
+            // Jelenítsük meg a termékeket
+            echo "<div class='product'>";
+            echo "<img src='{$row['kep']}' alt='{$row['nev']}'>";
+            echo "<h2>{$row['nev']}</h2>";
+            echo "<p>Leírás: {$row['leiras']}</p>";
+            echo "<p>Ár: {$row['ar']} Ft</p>";
+            echo "<a href='#' class='btn'>Kosárba</a>";
+            echo "</div>";
+        }
+    } else {
+        echo "Nincsenek termékek az adatbázisban.";
+    }
 
-    <div class="product">
-        <img src="madar_fesu.jpg" alt="Madár fésű">
-        <h2>Madár fésű</h2>
-        <p>500 Ft</p>
-        <p>Kényelmes és puha fésű madaraknak, amely segíti a tollak ápolását és a kényelmes érzést.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="madar_hintaztato.jpg" alt="Madár hintáztató">
-        <h2>Madár hintáztató</h2>
-        <p>1000 Ft</p>
-        <p>Biztonságos és szórakoztató hintáztató madaraknak, amely stimulálja a mozgást és a játékot.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    
-
-    <div class="product">
-        <img src="madar_rago_jatek.jpg" alt="Madár rágó játék">
-        <h2>Madár rágó játék</h2>
-        <p>700 Ft</p>
-        <p>Biztonságos és szórakoztató rágó játék madaraknak, amely segíti a csőrük egészséges fenntartását és a játékot.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="madar_furdokad.jpg" alt="Madár fürdőkád">
-        <h2>Madár fürdőkád</h2>
-        <p>1600 Ft</p>
-        <p>Könnyen felszerelhető és tisztítható fürdőkád madaraknak, amely segíti a higiéniát és a tollak ápolását.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="madar_jatekkonyv.jpg" alt="Madár játékkönyv">
-        <h2>Madár játékkönyv</h2>
-        <p>1200 Ft</p>
-        <p>Interaktív és tanulást segítő játékkönyv madaraknak, amely fejleszti az érzékeket és az intelligenciát.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="madar_etetotal.jpg" alt="Madár etetőtál">
-        <h2>Madár etetőtál</h2>
-        <p>800 Ft</p>
-        <p>Könnyen tisztítható és tartós madár etetőtál, amely lehetővé teszi, hogy kedvenc madaraid kényelmesen táplálkozhassanak.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="madar_hinta.jpg" alt="Madár hinta">
-        <h2>Madár hinta</h2>
-        <p>1000 Ft</p>
-        <p>Színes és szórakoztató madár hinta, amely lehetővé teszi a madarak számára a szabad repülés érzését a ketrecben.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="madar_etetoallvany.jpg" alt="Madár etetőállvány">
-        <h2>Madár etetőállvány</h2>
-        <p>1200 Ft</p>
-        <p>Könnyen felállítható és tisztítható madár etetőállvány, amely lehetővé teszi a madarak kényelmes táplálkozását.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    
+    // Adatbázis kapcsolat bezárása
+    $mysqli->close();
+    ?>
 </div>
     <footer class="footer">
         <div class="containerfooter">

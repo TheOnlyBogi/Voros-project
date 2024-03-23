@@ -186,9 +186,9 @@ CREATE TABLE `kutya_termek` (
 
 -- --------------------------------------------------------
 INSERT INTO `kutya_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
-(53, 'Kutya nyakörv', 2500, 'Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.', 0),
-(54, 'Kutya etetőtál', 1500, 'Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.', 0),
-(55, 'Kutya póráz', 2000, 'Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.', 0),
+(53, 'Kutya nyakörv', 2500, 'Divatos és kényelmes kutya nyakörv puha anyagból, amely biztosítja a kutyád biztonságát és kényelmét séták során.', 1),
+(54, 'Kutya etetőtál', 1500, 'Praktikus és könnyen tisztítható műanyag etetőtál kutyáknak, amely segít a rendszeres és egészséges táplálkozásban.', 2),
+(55, 'Kutya póráz', 2000, 'Erős és strapabíró póráz kutyáknak, amely segít a biztonságos sétákban és vezetéken tartásban.', 3),
 (56, 'Kutya hálózsák', 4000, 'Kényelmes és puha hálózsák kutyáknak, ideális alváshoz és pihenéshez otthon vagy kirándulások során.', 0),
 (57, 'Kutya biztonsági öv', 3000, 'Biztonsági öv kutyáknak az autóban, amely biztosítja a kutyád biztonságát és a vezetés zavartalan menetét.', 0),
 (58, 'Kutya öltöztető ruha', 2500, 'Divatos és kényelmes öltöztető ruha kutyáknak hideg időkre, amely megvédi őket a hidegtől és stílusos megjelenést biztosít.', 0),
@@ -283,6 +283,17 @@ CREATE TABLE `termekek` (
   `leiras` text COLLATE utf8_hungarian_ci DEFAULT NULL,
   `kategoria_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `kepek_id` (
+    kepek_id INT PRIMARY KEY,
+    url VARCHAR(255)
+);
+
+
+INSERT INTO `kepek_id` (`kep_id`,`url`) VALUES
+(1, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fjatekszallito.hu%2Ftermek%2Fmeretre-szabhato-vilagito-kutya-nyakorv-figyelemfelkelto-biztonsagi-nyakorv-esti-setakhoz-barmilyen-meretu-kutyanak-sarga-led-fennyel-bb-21631%2F&psig=AOvVaw2RV4NRTV5-9Upm0LJTX3nn&ust=1711291372348000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjL8abPioUDFQAAAAAdAAAAABAF'),
+(2, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmypetdolgok.com%2Fproduct%2Frozsdamentes-etetotal-kolyok-kutya-elvalasztasara%2F&psig=AOvVaw1ohjmI_S9tgXZRG_v4hKsX&ust=1711288789518000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKipudfFioUDFQAAAAAdAAAAABAw'),
+(3, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zooplus.hu%2Fmagazin%2Fkutya-magazin%2Fkutyatartas%2Flegjobb-poraz&psig=AOvVaw3Q27zRGNOfKkIbRjMHsBMJ&ust=1711291411664000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCZxrnPioUDFQAAAAAdAAAAABAL'),
 
 --
 -- A tábla adatainak kiíratása `termekek`

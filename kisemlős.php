@@ -1,18 +1,17 @@
 <?php
-
 session_start();
 
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
+// Adatbázis kapcsolódás
+$mysqli = new mysqli("localhost", "root", "", "toppet");
+
+// Ellenőrizzük a kapcsolatot
+if ($mysqli->connect_error) {
+    die("Sikertelen kapcsolódás: " . $mysqli->connect_error);
 }
+
+// Lekérdezés a termékek táblából
+$sql = "SELECT * FROM kisemlos_termek";
+$result = $mysqli->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -134,81 +133,27 @@ if (isset($_SESSION["user_id"])) {
     }
 </style>
 <div class="container">
-    <div class="product">
-        <img src="kep11.jpg" alt="Kisemlős futókerék">
-        <h2>Kisemlős futókerék</h2>
-        <p>1500 Ft</p>
-        <p>Kényelmes és biztonságos futókerék kisemlősök számára, amely segít fenntartani az egészségüket és formájukat.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
+    <?php
+    // Ellenőrizze, hogy vannak-e eredmények a lekérdezésből
+    if ($result->num_rows > 0) {
+        // Iteráljunk végig a lekérdezett sorokon
+        while ($row = $result->fetch_assoc()) {
+            // Jelenítsük meg a termékeket
+            echo "<div class='product'>";
+            echo "<img src='{$row['kep']}' alt='{$row['nev']}'>";
+            echo "<h2>{$row['nev']}</h2>";
+            echo "<p>Leírás: {$row['leiras']}</p>";
+            echo "<p>Ár: {$row['ar']} Ft</p>";
+            echo "<a href='#' class='btn'>Kosárba</a>";
+            echo "</div>";
+        }
+    } else {
+        echo "Nincsenek termékek az adatbázisban.";
+    }
 
-    <div class="product">
-        <img src="kep12.jpg" alt="Kisemlős takaróház">
-        <h2>Kisemlős takaróház</h2>
-        <p>1800 Ft</p>
-        <p>Puha és meleg takaróház kisemlősök számára, amely biztosítja a kényelmet és biztonságot.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep13.jpg" alt="Kisemlős játék guruló labda">
-        <h2>Kisemlős játék guruló labda</h2>
-        <p>800 Ft</p>
-        <p>Színes és mozgó játék labda kisemlősök számára, amely stimulálja a mozgást és az érzékeket.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-  
-
-    <div class="product">
-        <img src="kep14.jpg" alt="Kisemlős alom">
-        <h2>Kisemlős alom</h2>
-        <p>1000 Ft</p>
-        <p>Szagtalan és pormentes kisemlős alom, amely biztosítja a higiéniás környezetet és a kényelmet.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep15.jpg" alt="Kisemlős fésű">
-        <h2>Kisemlős fésű</h2>
-        <p>700 Ft</p>
-        <p>Puha sörtéjű fésű kisemlősök szőrzetének ápolásához és tisztításához.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep16.jpg" alt="Kisemlős hám">
-        <h2>Kisemlős hám</h2>
-        <p>1500 Ft</p>
-        <p>Kényelmes és állítható kisemlős hám, amely segíti a séták során történő irányítást és biztonságos vezetést.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep17.jpg" alt="Kisemlős futólabda">
-        <h2>Kisemlős futólabda</h2>
-        <p>1300 Ft</p>
-        <p>Állítható és biztonságos futólabda kisemlősöknek, amely stimulálja a mozgást és a szórakozást.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep18.jpg" alt="Kisemlős labirintus játék">
-        <h2>Kisemlős labirintus játék</h2>
-        <p>1500 Ft</p>
-        <p>Színes és interaktív labirintus játék kisemlősöknek, amely fejleszti az intelligenciát és a készségeket.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    <div class="product">
-        <img src="kep19.jpg" alt="Kisemlős játszótér">
-        <h2>Kisemlős játszótér</h2>
-        <p>2500 Ft</p>
-        <p>Színes és változatos játszótér kisemlősöknek, amely segíti a mozgást és a szórakozást.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-
-    
+    // Adatbázis kapcsolat bezárása
+    $mysqli->close();
+    ?>
 </div>
     <footer class="footer">
         <div class="containerfooter">

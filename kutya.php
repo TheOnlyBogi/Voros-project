@@ -130,7 +130,22 @@ $result = $mysqli->query($sql);
         while ($row = $result->fetch_assoc()) {
             // Jelenítsük meg a termékeket
             echo "<div class='product'>";
-            echo "<img src='{$row['kep']}' alt='{$row['nev']}'>";
+            
+            // Lekérjük az adott termékhez tartozó kép elérési útvonalát az adatbázisból
+            $kepek_id = $row['kepek_id'];
+            $sql_kep = "SELECT url FROM kepek_id WHERE kepek_id = $kepek_id";
+            $result_kep = $mysqli->query($sql_kep);
+            if ($result_kep->num_rows > 0) {
+                $row_kep = $result_kep->fetch_assoc();
+                $kep_url = $row_kep['url'];
+                echo "<img src='" . $kep_url . "' alt='{$row['nev']}'>";
+            } else {
+                echo "Nincs kép az adatbázisban az adott azonosítóval.";
+            }
+
+
+
+            
             echo "<h2>{$row['nev']}</h2>";
             echo "<p>Leírás: {$row['leiras']}</p>";
             echo "<p>Ár: {$row['ar']} Ft</p>";
@@ -145,6 +160,7 @@ $result = $mysqli->query($sql);
     $mysqli->close();
     ?>
 </div>
+
 
 <footer class="footer">
         <div class="containerfooter">
