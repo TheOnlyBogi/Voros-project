@@ -142,8 +142,8 @@ INSERT INTO `kisemlos_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
 (6, 'Kisemlős hám', 1500, 'Kényelmes és állítható kisemlős hám, amely segíti a séták során történő irányítást és biztonságos vezetést.', 35),
 (7, 'Kisemlős futólabda', 1300, 'Állítható és biztonságos futólabda kisemlősöknek, amely stimulálja a mozgást és a szórakozást.', 36),
 (8, 'Kisemlős labirintus játék', 1500, 'Színes és interaktív labirintus játék kisemlősöknek, amely fejleszti az intelligenciát és a készségeket.', 37),
-(9, 'Kisemlős játszótér', 2500, 'Színes és változatos játszótér kisemlősöknek, amely segíti a mozgást és a szórakozást.', 38),
-(10, 'Kisemlős játszóház', 2000, 'Színes és strapabíró játszóház kisemlősöknek, amely kényelmes pihenőhelyet és szórakozást biztosít.', 39);
+(9, 'Kisemlős játszótér', 2500, 'Színes és változatos játszótér kisemlősöknek, amely segíti a mozgást és a szórakozást.', 38);
+
 
 -- --------------------------------------------------------
 
@@ -217,8 +217,8 @@ INSERT INTO `macska_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
 (6, 'Macska cső', 1800, 'Szórakoztató és szöszmözölő cső macskáknak, amely segíti a mozgást és a játékot.', 15),
 (7, 'Macska hintaág', 3500, 'Szórakoztató és kényelmes hintaág macskáknak, amely segít az aktív játékban és pihenésben egyaránt.', 16),
 (8, 'Macska alomtálca', 3000, 'Szagsemlegesítő fedővel ellátott macska alomtálca, amely kényelmes és higiénikus környezetet biztosít a macskák számára.', 17),
-(9, 'Macska játékszer egér', 500, 'Puha és mozgó játék egér macskáknak, amely stimulálja a vadászösztönt és a játékot.', 18),
-(10, 'Macska karmolófa', 5000, 'Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.', 19);
+(9, 'Macska játékszer egér', 500, 'Puha és mozgó játék egér macskáknak, amely stimulálja a vadászösztönt és a játékot.', 18);
+
 -- --------------------------------------------------------
 
 --
@@ -242,8 +242,8 @@ INSERT INTO `madar_termek` (`id`, `nev`, `ar`, `leiras`, `kepek_id`) VALUES
 (206, 'Madár függő izé', 1200, 'Interaktív és unaloműző segítő játék madaraknak, amely fejleszti az érzékeket és az intelligenciát.', 25),
 (207, 'Madár etetőtál', 800, 'Könnyen tisztítható és tartós madár etetőtál, amely lehetővé teszi, hogy kedvenc madaraid kényelmesen táplálkozhassanak.', 26),
 (208, 'Madár hinta', 1000, 'Színes és szórakoztató madár hinta, amely lehetővé teszi a madarak számára a szabad repülés érzését a ketrecben.', 27),
-(209, 'Madár etetőállvány', 1200, 'Könnyen felállítható és tisztítható madár etetőállvány, amely lehetővé teszi a madarak kényelmes táplálkozását.', 28),
-(210, 'Madár játszófa', 3000, 'Színes és interaktív madár játszófa, amely segíti a madarak szellemi és fizikai fejlődését.', 29);
+(209, 'Madár etetőállvány', 1200, 'Könnyen felállítható és tisztítható madár etetőállvány, amely lehetővé teszi a madarak kényelmes táplálkozását.', 28);
+
 
 
 -- --------------------------------------------------------
@@ -277,13 +277,20 @@ CREATE TABLE `megrendelő` (
 -- Tábla szerkezet ehhez a táblához `termekek`
 --
 
-CREATE TABLE `termekek` (
-  `termek_id` int(11) NOT NULL,
+CREATE TABLE `kedvezmenyes_termekek` (
+  `id` int(11) NOT NULL,
   `nev` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
-  `ar` int(11) NOT NULL,
+  `erar` int(11) NOT NULL,
+  `kedvar` int(11) NOT NULL,
   `leiras` text COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `kategoria_id` int(11) NOT NULL
+  `kepek_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+INSERT INTO `kedvezmenyes_termekek` (`id`, `nev`, `erar`,`kedvar`, `leiras`, `kepek_id`) VALUES
+(1, 'Madár játszófa', 3000, 2699, 'Színes és interaktív madár játszófa, amely segíti a madarak szellemi és fizikai fejlődését.', 29),
+(2, 'Macska karmolófa', 5000, 4599, 'Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.', 19),
+(3, 'Kisemlős játszóház', 2000, 1499, 'Színes és strapabíró játszóház kisemlősöknek, amely kényelmes pihenőhelyet és szórakozást biztosít.', 39);
+
 
 CREATE TABLE `kepek_id` (
     `kep_id` INT PRIMARY KEY,

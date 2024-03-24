@@ -1,20 +1,20 @@
 <?php
-
 session_start();
 
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
+// Adatbázis kapcsolódás
+$mysqli = new mysqli("localhost", "root", "", "toppet");
+
+// Ellenőrizzük a kapcsolatot
+if ($mysqli->connect_error) {
+    die("Sikertelen kapcsolódás: " . $mysqli->connect_error);
 }
 
+// Lekérdezés a termékek táblából
+$sql = "SELECT * FROM kedvezmenyes_termekek";
+$result = $mysqli->query($sql);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -23,13 +23,14 @@ if (isset($_SESSION["user_id"])) {
     <title>Kutya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
       <div class="headerakcio">
+
         <a href="Főoldal.html"><h4>Nyitási akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
@@ -74,10 +75,12 @@ if (isset($_SESSION["user_id"])) {
           </nav>
         </div>
     </header>
+
     <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+        
     }
     .container {
         max-width: 1000px;
@@ -96,15 +99,18 @@ if (isset($_SESSION["user_id"])) {
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Árnyék hozzáadása */
         transition: transform 0.3s ease; /* Animáció */
+        text-align: center; /* Szöveg középre igazítása */
     }
     .product:hover {
         transform: translateY(-5px); /* Kicsit felemelkedik, ha rávisz a kurzor */
     }
     .product img {
-        max-width: 100px;
+        max-width: 200px; /* Kép maximális szélessége */
         height: auto;
         margin-bottom: 10px;
         border-radius: 10px;
+        display: block; /* Eltávolítja a felesleges helyet az img elemek körül */
+        margin: 0 auto; /* Kép középre igazítása */
     }
     .btn {
         background-color: #4CAF50;
@@ -118,57 +124,86 @@ if (isset($_SESSION["user_id"])) {
     }
     .btn:hover {
         background-color: #45a049; /* Színváltás hoverre */
-      }
-    .kf {
-        color: red;
-        margin: 0 auto;
-      }
-    
+        
+    }
+    .eredeti-ar {
+        text-decoration: line-through;
+    }
+
+    .huge-discounts {
+            text-align: center; /* Középre igazítás */
+            margin-bottom: 30px; /* Távolság a következő elem alatt */
+        }
+        
+        .huge-discounts-title {
+            font-size: 48px; /* Betűméret */
+            background: linear-gradient(to right, red, #feb47b); /* Színátmenet beállítása */
+            -webkit-background-clip: text; /* Betűk festése a háttérre */
+            -webkit-text-fill-color: transparent; /* Betűk átlátszóvá tétele */
+            position: relative; /* Abszolút pozicionálás */
+            animation: moveLetters 4s infinite alternate; /* Betűk mozgatása animációval */
+        }
+        
+        @keyframes moveLetters {
+          0% {
+              transform: translateY(0); /* Eredeti helyzet */
+              }
+              50% {
+                  transform: translateY(-10px); /* Felmozgatás */
+              }
+              100% {
+                  transform: translateY(0); /* Vissza a kiindulási helyzetbe */
+              } 
+            }    
 </style>
 
-
-<div class="kf">
-  <h1 >ÓRIÁSI KEDVEZMÉNYEK</h1>
+<div class="huge-discounts">
+    <h1 class="huge-discounts-title">Óriási kedvezmények</h1>
 </div>
-
 
 <div class="container">
-    
-    <div class="product">
-            <img src="kep19.jpg" alt="Hüllő terrárium növény">
-            <h2>Hüllő terrárium növény</h2>
-            <small><s>1500ft</s></small>
-            <p>1200 Ft</p>
-            <p>Természetes megjelenésű műanyag növény hüllő terráriumokhoz, hogy otthonosabbá tegye a hüllők élőhelyét.</p>
-            <a href="#" class="btn">Kosárba</a>
-        </div>
-        <div class="product">
-        <img src="kep20.jpg" alt="Kisemlős játszóház">
-        <h2>Kisemlős játszóház</h2>
-        <small><s>2300ft</s></small>
-        <p>2000 Ft</p>
-        <p>Színes és strapabíró játszóház kisemlősöknek, amely kényelmes pihenőhelyet és szórakozást biztosít.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-    <div class="product">
-        <img src="madar_jatszofa.jpg" alt="Madár játszófa">
-        <h2>Madár játszófa</h2>
-        <small><s>3400ft</s></small>
-        <p>3000 Ft</p>
-        <p>Színes és interaktív madár játszófa, amely segíti a madarak szellemi és fizikai fejlődését.</p>
-        <a href="#" class="btn">Kosárba</a>
-    </div>
-    <div class="product">
-    <img src="kep10.jpg" alt="Macska karmolófa">
-    <h2>Macska karmolófa</h2>
-    <small><s>5999ft</s></small>
-    <p>5000 Ft</p>
-    <p>Magas minőségű karmolófa macskáknak, amely megvédi a bútorokat és lehetővé teszi a macska számára a karmolászást.</p>
-    <a href="#" class="btn">Kosárba</a>
-  </div>
+    <?php
+    // Ellenőrizze, hogy vannak-e eredmények a lekérdezésből
+    if ($result->num_rows > 0) {
+        // Iteráljunk végig a lekérdezett sorokon
+        while ($row = $result->fetch_assoc()) {
+            // Jelenítsük meg a termékeket
+            echo "<div class='product'>";
+            
+            // Lekérjük az adott termékhez tartozó kép elérési útvonalát az adatbázisból
+
+            $kep_id = $row['kepek_id']; // helyesen: kep_id
+            $sql_kep = "SELECT url FROM kepek_id WHERE kep_id = ?";
+            $stmt = $mysqli->prepare($sql_kep);
+            $stmt->bind_param("i", $kep_id);
+            $stmt->execute();
+            $result_kep = $stmt->get_result();
+
+            if ($result_kep->num_rows > 0) {
+                $row_kep = $result_kep->fetch_assoc();
+                $kep_url = $row_kep['url'];
+                echo "<img src='" . $kep_url . "' alt='{$row['nev']}'>";
+            } else {
+                echo "Nincs kép az adatbázisban az adott azonosítóval.";
+            }
+            echo "<h2>{$row['nev']}</h2>";
+            echo "<p>Leírás: {$row['leiras']}</p>";
+            echo "<p>Eredeti ár: <s>  {$row['erar']} Ft</s></p>";
+            echo "<p>Kedvezményes ár: {$row['kedvar']} Ft</p>";
+            echo "<a href='#' class='btn'>Kosárba</a>";
+            echo "</div>";
+        }
+    } else {
+        echo "Nincsenek termékek az adatbázisban.";
+    }
+
+    // Adatbázis kapcsolat bezárása
+    $mysqli->close();
+    ?>
 </div>
 
-    <footer class="footer">
+
+<footer class="footer">
         <div class="containerfooter">
           <div class="rowfooter">
             <div class="footer-col">
@@ -178,15 +213,16 @@ if (isset($_SESSION["user_id"])) {
                 <li><a href="https://www.google.com/maps/place/Budapest/@47.4808722,18.8501225,10z/data=!3m1!4b1!4m5!3m4!1s0x4741c334d1d4cfc9:0x400c4290c1e1160!8m2!3d47.497912!4d19.040235" target="_blank">Budapest</a></li>
                 <li><a href="https://www.google.com/maps/place/P%C3%A9cs/@46.0776474,18.1104982,11z/data=!3m1!4b1!4m5!3m4!1s0x4742b111ea3252e3:0x400c4290c1e1200!8m2!3d46.0727345!4d18.232266" target="_blank">Pécs</a></li>
                 <li><a href="https://www.google.com/maps/place/Debrecen/@47.5305732,21.3800015,10z/data=!3m1!4b1!4m5!3m4!1s0x47470c2afe5e2b83:0x400c4290c1e1170!8m2!3d47.5316049!4d21.6273124" target="_blank">Debrecen</a></li>
-                <li><a href="https://www.google.com/maps/place/Szeged/@46.2327035,20.0003853,11z/data=!3m1!4b1!4m5!3m4!1s0x474487e22bcce54b:0x400c4290c1e1190!8m2!3d46.2530102!4d20.1414253" target="_blank">Szeged</a></li>
-                <li><a href="https://www.google.com/maps/place/Veszpr%C3%A9m/@47.1257777,17.8372088,12z/data=!3m1!4b1!4m5!3m4!1s0x47699add028c2f91:0x400c4290c1e1210!8m2!3d47.1028087!4d17.9093019" target="_blank">Veszprém</a></li>
+                <li><a href="#">Szeged</a></li>
+                <li><a href="#">Veszprém</a></li>
               </ul>
             </div>
             <div class="footer-col">
               <h4>Oldalak</h4>
               <ul>
                 <li><a href="#">Szállítás</a></li>
-                <li><a href="#">Árlista</a></li>
+                <li><a href
+                ="#">Árlista</a></li>
                 <li><a href="GYIK.php">GYIK</a></li>
                 <li><a href="Adatvédelmi tájékoztató.docx" download>
                     <p>Adatvédelmi tájékoztató</p>
@@ -216,7 +252,6 @@ if (isset($_SESSION["user_id"])) {
           </div>
         </div>
     </footer>
-
 
 </body>
 </html>
