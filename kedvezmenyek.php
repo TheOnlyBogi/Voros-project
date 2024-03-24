@@ -38,7 +38,7 @@ if (isset($_SESSION["user_id"])) {
             <ul>
             <li><a href="index.php">Főoldal</a></li>
                     <li>
-                        <a href="#">Termékek</a>
+                        <a>Termékek</a>
                         <div>
                             <a href="kutya.php">Kutya</a>
                             <a href="cica.php">Cica</a>
