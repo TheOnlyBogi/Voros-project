@@ -148,19 +148,19 @@ if (isset($_SESSION["user_id"])) {
     <div id="Szállítás" class="tabcontent active">
       <h3>Szállítás</h3>
       <p>#1 Mennyi idő alatt érkezik meg a rendelésem?</p>
-      <p>Szállításod a lehető leghamarabb kiszállítjuk, körülbelül 3-5 nap</p>
+      <p>Szállításod a lehető leghamarabb kiszállítjuk, körülbelül 3-5 nap.</p>
       <p>#2 Mennyibe kerül a szállítás?</p>
       <p>Több fizetési mód közül választhatsz, de átlagosan 1500Ft</p>
       <p>#3 Van lehetőség expressz szállításra?</p>
-      <p>Van lehetőség expressz szállításra, viszont ahhoz felárat számítunk fel</p>
+      <p>Van lehetőség expressz szállításra, viszont ahhoz felárat számítunk fel.</p>
     </div>
 
     <div id="Termékek" class="tabcontent">
       <h3>Termékek</h3>
       <p>#1 Milyen anyagból készült a termék?</p>
-      <p>Termékeink változó összetételű anyagokból készült (gumi,szövet,pamut)</p>
+      <p>Termékeink változó összetételű anyagokból készült (gumi,szövet,pamut).</p>
       <p>#2 Milyen garanciát vállalnak a termékre?</p>
-      <p>Termékeink a legjobb minőség ellenőrzésen esnek át, így nincs szükség garanciára</p>
+      <p>Termékeink a legjobb minőség ellenőrzésen esnek át, így nincs szükség garanciára.</p>
     </div>
 
     <div id="Fizetés" class="tabcontent">
