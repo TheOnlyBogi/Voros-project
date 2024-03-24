@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
 
     <header class="header">
       <div class="headerakcio">
-        <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+        <a href="kedvezmenyek.php"><h4>Nyitási akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
@@ -93,16 +93,16 @@ if (isset($_SESSION["user_id"])) {
 
             <p class="reason-heading">**Miért válassz minket?**</p>
             <ol class="reason-list">
-                <li>**Minőség:** Termékeink kizárólag a legjobb alapanyagokból készülnek, és szigorú minőségellenőrzésen mennek keresztül, hogy biztosítsuk az állatok biztonságát és kényelmét.</li>
-                <li>**Innováció:** A Top Pet csapata folyamatosan kutatja és fejleszti új termékeinket, hogy lépést tartson a legfrissebb trendekkel és technológiával a háziállatok világában.</li>
-                <li>**Széles választék:** Az állatfajtától és mérettől függetlenül széles választékot kínálunk termékeinkből, beleértve az étrend-kiegészítőket, játékokat, kényelmi termékeket és sok mást.</li>
-                <li>**Ügyfélszolgálat:** Az elégedett ügyfelek számunkra mindennél fontosabbak. Kiváló ügyfélszolgálati csapatunk mindig rendelkezésre áll, hogy segítsen Önnek bármilyen kérdésben vagy problémában.</li>
+                <li><bold>Minőség</bold>: Termékeink kizárólag a legjobb alapanyagokból készülnek, és szigorú minőségellenőrzésen mennek keresztül, hogy biztosítsuk az állatok biztonságát és kényelmét.</li>
+                <li><bold>Innováció</bold>: A Top Pet csapata folyamatosan kutatja és fejleszti új termékeinket, hogy lépést tartson a legfrissebb trendekkel és technológiával a háziállatok világában.</li>
+                <li><bold>Széles választék</bold>: Az állatfajtától és mérettől függetlenül széles választékot kínálunk termékeinkből, beleértve az étrend-kiegészítőket, játékokat, kényelmi termékeket és sok mást.</li>
+                <li><bold>Ügyfélszolgálat</bold>: Az elégedett ügyfelek számunkra mindennél fontosabbak. Kiváló ügyfélszolgálati csapatunk mindig rendelkezésre áll, hogy segítsen Önnek bármilyen kérdésben vagy problémában.</li>
             </ol>
 
-            <p class="about">**A Top Pet-ről**</p>
+            <p class="about"><bold>A Top Pet-ről</bold></p>
             <p class="about">A Top Pet egy elismert és megbízható márka, amelyet szenvedélyes állatbarátok alapítottak. Célunk az, hogy minden háziállat tulajdonos számára elérhetővé tegyük a legjobb minőségű és megfizethető árú termékeket, amelyek segítenek az állatok boldogságában és egészségében.</p>
 
-            <p class="about">**Közösség és Felelősségvállalás**</p>
+            <p class="about"><bold>Közösség és Felelősségvállalás</bold></p>
             <p class="about">A Top Pet nem csupán egy vállalat, hanem egy közösség is, amely elkötelezett a környezetvédelem és az állatvédelem iránt. Cégünk felelős módon működik, és támogatja az állatok védelmét és jólétét szolgáló kezdeményezéseket.</p>
         </div>
     </div>

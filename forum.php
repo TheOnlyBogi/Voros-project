@@ -92,7 +92,7 @@ if (isset($_SESSION["user_id"])) {
 <body>
 <header class="header">
       <div class="headerakcio">
-        <a href="kedvezmenyek.php"><h4>Újévi akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
+        <a href="kedvezmenyek.php"><h4>Nyitási akciónk kereteiben akár -50% kezdvezmény 	&#8594</h4></a>
       </div>
       <img src="pet logo.png" alt="Pet logó" class="logó">
         <div class="containerheader">
