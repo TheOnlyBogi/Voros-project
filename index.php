@@ -99,7 +99,6 @@ if (isset($_SESSION["user_id"])) {
     <br>
     <div class="content" style="text-align: center; border: 2px dashed black;">
         <h2 id="bemv">Bemutatkozás</h2>
-        <p>Ez a videó a cégnél dolgozó embereket mutatja be és munkájukat. </p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/QwdE_fyAaeQ?si=MailI0znawlftEz-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <hr>
